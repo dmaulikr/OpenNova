@@ -1,0 +1,813 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80181E361ED00FAD00814023 /* RKPackBitsDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 80181E341ED00FAD00814023 /* RKPackBitsDecoder.h */; };
+		80181E371ED00FAD00814023 /* RKPackBitsDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 80181E351ED00FAD00814023 /* RKPackBitsDecoder.m */; };
+		80181E3C1ED01BF400814023 /* REPictureResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80181E3A1ED01BF400814023 /* REPictureResourceViewController.m */; };
+		80181E3D1ED01BF400814023 /* REPictureResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80181E3B1ED01BF400814023 /* REPictureResourceViewController.xib */; };
+		80D243AE1E0AF63D0040CF83 /* Rez.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DC81E0A504800E4A162 /* Rez.h */; };
+		80D243AF1E0AF6430040CF83 /* Allocations.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DDA1E0A584F00E4A162 /* Allocations.h */; };
+		80D243B01E0AF6430040CF83 /* DataFile.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DCD1E0A50DB00E4A162 /* DataFile.h */; };
+		80D243C01E0BAF430040CF83 /* RKResourceFork.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D243BE1E0BAF430040CF83 /* RKResourceFork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80D243C11E0BAF430040CF83 /* RKResourceFork.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D243BF1E0BAF430040CF83 /* RKResourceFork.m */; };
+		80D243CB1E0C30BB0040CF83 /* RKResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D243C91E0C30BB0040CF83 /* RKResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80D243CC1E0C30BB0040CF83 /* RKResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D243CA1E0C30BB0040CF83 /* RKResource.m */; };
+		80E295A81ED0451400BCA35B /* Ndat.c in Sources */ = {isa = PBXBuildFile; fileRef = 80E295A61ED0451400BCA35B /* Ndat.c */; };
+		80E295A91ED0451400BCA35B /* Ndat.h in Headers */ = {isa = PBXBuildFile; fileRef = 80E295A71ED0451400BCA35B /* Ndat.h */; };
+		80E295AC1ED087E800BCA35B /* RKNdatResourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 80E295AA1ED087E800BCA35B /* RKNdatResourceFile.h */; };
+		80E295AD1ED087E800BCA35B /* RKNdatResourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295AB1ED087E800BCA35B /* RKNdatResourceFile.m */; };
+		80E295B21ED0B27E00BCA35B /* REResourceBrowserWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295B01ED0B27E00BCA35B /* REResourceBrowserWindow.m */; };
+		80E295B31ED0B27E00BCA35B /* REResourceBrowserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E295B11ED0B27E00BCA35B /* REResourceBrowserWindow.xib */; };
+		80E295B61ED0B78F00BCA35B /* REResourceBrowserDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295B51ED0B78F00BCA35B /* REResourceBrowserDataSource.m */; };
+		80E295BD1ED15EDD00BCA35B /* REResourceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295BC1ED15EDD00BCA35B /* REResourceHeaderView.m */; };
+		BC6D0D9E1E0A4FA400E4A162 /* ResourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */; };
+		BC6D0DA51E0A4FA400E4A162 /* ResourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */; };
+		BC6D0DB91E0A4FE600E4A162 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DB81E0A4FE600E4A162 /* main.m */; };
+		BC6D0DBB1E0A4FE600E4A162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6D0DBA1E0A4FE600E4A162 /* Assets.xcassets */; };
+		BC6D0DBE1E0A4FE600E4A162 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6D0DBC1E0A4FE600E4A162 /* MainMenu.xib */; };
+		BC6D0DC91E0A504800E4A162 /* Rez.c in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DC71E0A504800E4A162 /* Rez.c */; };
+		BC6D0DCE1E0A50DB00E4A162 /* DataFile.c in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DCC1E0A50DB00E4A162 /* DataFile.c */; };
+		BC6D0DDE1E0A5B6A00E4A162 /* AllocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DDD1E0A5B6A00E4A162 /* AllocationTests.m */; };
+		BC6D0DE21E0A9BEF00E4A162 /* RKResourceFileProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DE11E0A9BEF00E4A162 /* RKResourceFileProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC6D0DE61E0AA2AC00E4A162 /* RKRezResourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DE41E0AA2AC00E4A162 /* RKRezResourceFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC6D0DE71E0AA2AC00E4A162 /* RKRezResourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DE51E0AA2AC00E4A162 /* RKRezResourceFile.m */; };
+		BC6D0DE91E0ACCA000E4A162 /* RKRezResourceFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DE81E0ACCA000E4A162 /* RKRezResourceFileTests.m */; };
+		BC6D0DEE1E0ACF3F00E4A162 /* Test1.rez in Test Data (Rez) */ = {isa = PBXBuildFile; fileRef = BC6D0DEC1E0ACD8900E4A162 /* Test1.rez */; };
+		BC7519521E3F7A8600960311 /* RKResourceParserProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519511E3F7A8600960311 /* RKResourceParserProtocol.h */; };
+		BC7519551E3F81DA00960311 /* RKPictureResourceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519531E3F81DA00960311 /* RKPictureResourceParser.h */; };
+		BC7519561E3F81DA00960311 /* RKPictureResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7519541E3F81DA00960311 /* RKPictureResourceParser.m */; };
+		BC75195A1E3F87F900960311 /* NSData+Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519581E3F87F900960311 /* NSData+Parsing.h */; };
+		BC75195B1E3F87F900960311 /* NSData+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7519591E3F87F900960311 /* NSData+Parsing.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80D243B11E0AF6530040CF83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC6D0D8B1E0A4FA300E4A162 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC6D0D931E0A4FA300E4A162;
+			remoteInfo = ResourceKit;
+		};
+		BC6D0D9F1E0A4FA400E4A162 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC6D0D8B1E0A4FA300E4A162 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC6D0D931E0A4FA300E4A162;
+			remoteInfo = ResourceKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BC6D0DED1E0ACF1200E4A162 /* Test Data (Rez) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = TestData/Rez;
+			dstSubfolderSpec = 7;
+			files = (
+				BC6D0DEE1E0ACF3F00E4A162 /* Test1.rez in Test Data (Rez) */,
+			);
+			name = "Test Data (Rez)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		80181E341ED00FAD00814023 /* RKPackBitsDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKPackBitsDecoder.h; path = ResourceFork/Helpers/RKPackBitsDecoder.h; sourceTree = "<group>"; };
+		80181E351ED00FAD00814023 /* RKPackBitsDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKPackBitsDecoder.m; path = ResourceFork/Helpers/RKPackBitsDecoder.m; sourceTree = "<group>"; };
+		80181E391ED01BF400814023 /* REPictureResourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REPictureResourceViewController.h; path = PictureResourceWindow/REPictureResourceViewController.h; sourceTree = "<group>"; };
+		80181E3A1ED01BF400814023 /* REPictureResourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REPictureResourceViewController.m; path = PictureResourceWindow/REPictureResourceViewController.m; sourceTree = "<group>"; };
+		80181E3B1ED01BF400814023 /* REPictureResourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = REPictureResourceViewController.xib; path = PictureResourceWindow/REPictureResourceViewController.xib; sourceTree = "<group>"; };
+		80D243BE1E0BAF430040CF83 /* RKResourceFork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKResourceFork.h; path = ResourceFork/RKResourceFork.h; sourceTree = "<group>"; };
+		80D243BF1E0BAF430040CF83 /* RKResourceFork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKResourceFork.m; path = ResourceFork/RKResourceFork.m; sourceTree = "<group>"; };
+		80D243C91E0C30BB0040CF83 /* RKResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKResource.h; path = ResourceFork/Objects/RKResource.h; sourceTree = "<group>"; };
+		80D243CA1E0C30BB0040CF83 /* RKResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKResource.m; path = ResourceFork/Objects/RKResource.m; sourceTree = "<group>"; };
+		80E295A61ED0451400BCA35B /* Ndat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Ndat.c; path = Ndat/Ndat.c; sourceTree = "<group>"; };
+		80E295A71ED0451400BCA35B /* Ndat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ndat.h; path = Ndat/Ndat.h; sourceTree = "<group>"; };
+		80E295AA1ED087E800BCA35B /* RKNdatResourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKNdatResourceFile.h; path = ResourceFork/Wrappers/RKNdatResourceFile.h; sourceTree = "<group>"; };
+		80E295AB1ED087E800BCA35B /* RKNdatResourceFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKNdatResourceFile.m; path = ResourceFork/Wrappers/RKNdatResourceFile.m; sourceTree = "<group>"; };
+		80E295AF1ED0B27E00BCA35B /* REResourceBrowserWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REResourceBrowserWindow.h; path = ResourceBrowser/REResourceBrowserWindow.h; sourceTree = "<group>"; };
+		80E295B01ED0B27E00BCA35B /* REResourceBrowserWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REResourceBrowserWindow.m; path = ResourceBrowser/REResourceBrowserWindow.m; sourceTree = "<group>"; };
+		80E295B11ED0B27E00BCA35B /* REResourceBrowserWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = REResourceBrowserWindow.xib; path = ResourceBrowser/REResourceBrowserWindow.xib; sourceTree = "<group>"; };
+		80E295B41ED0B78F00BCA35B /* REResourceBrowserDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REResourceBrowserDataSource.h; path = ResourceBrowser/REResourceBrowserDataSource.h; sourceTree = "<group>"; };
+		80E295B51ED0B78F00BCA35B /* REResourceBrowserDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REResourceBrowserDataSource.m; path = ResourceBrowser/REResourceBrowserDataSource.m; sourceTree = "<group>"; };
+		80E295BB1ED15EDD00BCA35B /* REResourceHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REResourceHeaderView.h; path = ResourceBrowser/REResourceHeaderView.h; sourceTree = "<group>"; };
+		80E295BC1ED15EDD00BCA35B /* REResourceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REResourceHeaderView.m; path = ResourceBrowser/REResourceHeaderView.m; sourceTree = "<group>"; };
+		BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceKit.h; sourceTree = "<group>"; };
+		BC6D0D981E0A4FA400E4A162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6D0D9D1E0A4FA400E4A162 /* ResourceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResourceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6D0DA41E0A4FA400E4A162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6D0DB21E0A4FE600E4A162 /* ResEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6D0DB41E0A4FE600E4A162 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC6D0DB81E0A4FE600E4A162 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC6D0DBA1E0A4FE600E4A162 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC6D0DBD1E0A4FE600E4A162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BC6D0DBF1E0A4FE600E4A162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6D0DC71E0A504800E4A162 /* Rez.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Rez.c; path = Rez/Rez.c; sourceTree = "<group>"; };
+		BC6D0DC81E0A504800E4A162 /* Rez.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rez.h; path = Rez/Rez.h; sourceTree = "<group>"; };
+		BC6D0DCC1E0A50DB00E4A162 /* DataFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = DataFile.c; path = Common/DataFile.c; sourceTree = "<group>"; };
+		BC6D0DCD1E0A50DB00E4A162 /* DataFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFile.h; path = Common/DataFile.h; sourceTree = "<group>"; };
+		BC6D0DDA1E0A584F00E4A162 /* Allocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Allocations.h; path = Common/Allocations.h; sourceTree = "<group>"; };
+		BC6D0DDD1E0A5B6A00E4A162 /* AllocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllocationTests.m; sourceTree = "<group>"; };
+		BC6D0DE11E0A9BEF00E4A162 /* RKResourceFileProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKResourceFileProtocol.h; path = ResourceFork/Protocols/RKResourceFileProtocol.h; sourceTree = "<group>"; };
+		BC6D0DE41E0AA2AC00E4A162 /* RKRezResourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRezResourceFile.h; path = ResourceFork/Wrappers/RKRezResourceFile.h; sourceTree = "<group>"; };
+		BC6D0DE51E0AA2AC00E4A162 /* RKRezResourceFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRezResourceFile.m; path = ResourceFork/Wrappers/RKRezResourceFile.m; sourceTree = "<group>"; };
+		BC6D0DE81E0ACCA000E4A162 /* RKRezResourceFileTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKRezResourceFileTests.m; sourceTree = "<group>"; };
+		BC6D0DEC1E0ACD8900E4A162 /* Test1.rez */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = Test1.rez; path = TestData/Rez/Test1.rez; sourceTree = "<group>"; };
+		BC7519511E3F7A8600960311 /* RKResourceParserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKResourceParserProtocol.h; path = ResourceFork/Protocols/RKResourceParserProtocol.h; sourceTree = "<group>"; };
+		BC7519531E3F81DA00960311 /* RKPictureResourceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKPictureResourceParser.h; path = ResourceFork/Parsers/RKPictureResourceParser.h; sourceTree = "<group>"; };
+		BC7519541E3F81DA00960311 /* RKPictureResourceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKPictureResourceParser.m; path = ResourceFork/Parsers/RKPictureResourceParser.m; sourceTree = "<group>"; };
+		BC7519581E3F87F900960311 /* NSData+Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Parsing.h"; path = "Categories/NSData+Parsing.h"; sourceTree = "<group>"; };
+		BC7519591E3F87F900960311 /* NSData+Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Parsing.m"; path = "Categories/NSData+Parsing.m"; sourceTree = "<group>"; };
+		BC75195D1E40DEA800960311 /* ClassicMacTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ClassicMacTypes.h; path = Types/ClassicMacTypes.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC6D0D901E0A4FA300E4A162 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6D0D9A1E0A4FA400E4A162 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6D0D9E1E0A4FA400E4A162 /* ResourceKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6D0DAF1E0A4FE600E4A162 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80181E331ED00F8500814023 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				80181E341ED00FAD00814023 /* RKPackBitsDecoder.h */,
+				80181E351ED00FAD00814023 /* RKPackBitsDecoder.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		80181E381ED01BCA00814023 /* PictureResourceWindow */ = {
+			isa = PBXGroup;
+			children = (
+				80181E391ED01BF400814023 /* REPictureResourceViewController.h */,
+				80181E3A1ED01BF400814023 /* REPictureResourceViewController.m */,
+				80181E3B1ED01BF400814023 /* REPictureResourceViewController.xib */,
+			);
+			name = PictureResourceWindow;
+			sourceTree = "<group>";
+		};
+		80D243C81E0C30990040CF83 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				80D243C91E0C30BB0040CF83 /* RKResource.h */,
+				80D243CA1E0C30BB0040CF83 /* RKResource.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		80E295AE1ED0B25600BCA35B /* ResourceBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				80E295AF1ED0B27E00BCA35B /* REResourceBrowserWindow.h */,
+				80E295B01ED0B27E00BCA35B /* REResourceBrowserWindow.m */,
+				80E295B41ED0B78F00BCA35B /* REResourceBrowserDataSource.h */,
+				80E295B51ED0B78F00BCA35B /* REResourceBrowserDataSource.m */,
+				80E295BB1ED15EDD00BCA35B /* REResourceHeaderView.h */,
+				80E295BC1ED15EDD00BCA35B /* REResourceHeaderView.m */,
+				80E295B11ED0B27E00BCA35B /* REResourceBrowserWindow.xib */,
+			);
+			name = ResourceBrowser;
+			sourceTree = "<group>";
+		};
+		BC6D0D8A1E0A4FA300E4A162 = {
+			isa = PBXGroup;
+			children = (
+				BC6D0D961E0A4FA300E4A162 /* ResourceKit */,
+				BC6D0DEA1E0ACD7500E4A162 /* Test Data */,
+				BC6D0DA11E0A4FA400E4A162 /* ResourceKitTests */,
+				BC6D0DB31E0A4FE600E4A162 /* ResEdit */,
+				BC6D0D951E0A4FA300E4A162 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC6D0D951E0A4FA300E4A162 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */,
+				BC6D0D9D1E0A4FA400E4A162 /* ResourceKitTests.xctest */,
+				BC6D0DB21E0A4FE600E4A162 /* ResEdit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC6D0D961E0A4FA300E4A162 /* ResourceKit */ = {
+			isa = PBXGroup;
+			children = (
+				BC7519571E3F87DA00960311 /* Categories */,
+				BC6D0DCB1E0A50C100E4A162 /* Common */,
+				BC6D0DC41E0A4FFD00E4A162 /* Rez */,
+				BC6D0DC51E0A500300E4A162 /* Ndat */,
+				BC6D0DC31E0A4FF100E4A162 /* ResourceFork */,
+				BC6D0DC61E0A500C00E4A162 /* Types */,
+				BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */,
+				BC6D0D981E0A4FA400E4A162 /* Info.plist */,
+			);
+			path = ResourceKit;
+			sourceTree = "<group>";
+		};
+		BC6D0DA11E0A4FA400E4A162 /* ResourceKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DA41E0A4FA400E4A162 /* Info.plist */,
+				BC6D0DDD1E0A5B6A00E4A162 /* AllocationTests.m */,
+				BC6D0DE81E0ACCA000E4A162 /* RKRezResourceFileTests.m */,
+			);
+			path = ResourceKitTests;
+			sourceTree = "<group>";
+		};
+		BC6D0DB31E0A4FE600E4A162 /* ResEdit */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DB41E0A4FE600E4A162 /* AppDelegate.h */,
+				BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */,
+				80E295AE1ED0B25600BCA35B /* ResourceBrowser */,
+				80181E381ED01BCA00814023 /* PictureResourceWindow */,
+				BC6D0DBA1E0A4FE600E4A162 /* Assets.xcassets */,
+				BC6D0DBC1E0A4FE600E4A162 /* MainMenu.xib */,
+				BC6D0DBF1E0A4FE600E4A162 /* Info.plist */,
+				BC6D0DB71E0A4FE600E4A162 /* Supporting Files */,
+			);
+			path = ResEdit;
+			sourceTree = "<group>";
+		};
+		BC6D0DB71E0A4FE600E4A162 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DB81E0A4FE600E4A162 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC6D0DC31E0A4FF100E4A162 /* ResourceFork */ = {
+			isa = PBXGroup;
+			children = (
+				80D243BE1E0BAF430040CF83 /* RKResourceFork.h */,
+				80D243BF1E0BAF430040CF83 /* RKResourceFork.m */,
+				80181E331ED00F8500814023 /* Helpers */,
+				BC7519501E3F779F00960311 /* Parsers */,
+				80D243C81E0C30990040CF83 /* Objects */,
+				BC6D0DE31E0AA29600E4A162 /* Wrappers */,
+				BC6D0DE01E0A9BC200E4A162 /* Protocols */,
+			);
+			name = ResourceFork;
+			sourceTree = "<group>";
+		};
+		BC6D0DC41E0A4FFD00E4A162 /* Rez */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DC81E0A504800E4A162 /* Rez.h */,
+				BC6D0DC71E0A504800E4A162 /* Rez.c */,
+			);
+			name = Rez;
+			sourceTree = "<group>";
+		};
+		BC6D0DC51E0A500300E4A162 /* Ndat */ = {
+			isa = PBXGroup;
+			children = (
+				80E295A61ED0451400BCA35B /* Ndat.c */,
+				80E295A71ED0451400BCA35B /* Ndat.h */,
+			);
+			name = Ndat;
+			sourceTree = "<group>";
+		};
+		BC6D0DC61E0A500C00E4A162 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				BC75195D1E40DEA800960311 /* ClassicMacTypes.h */,
+			);
+			name = Types;
+			sourceTree = "<group>";
+		};
+		BC6D0DCB1E0A50C100E4A162 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DDA1E0A584F00E4A162 /* Allocations.h */,
+				BC6D0DCD1E0A50DB00E4A162 /* DataFile.h */,
+				BC6D0DCC1E0A50DB00E4A162 /* DataFile.c */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		BC6D0DE01E0A9BC200E4A162 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DE11E0A9BEF00E4A162 /* RKResourceFileProtocol.h */,
+				BC7519511E3F7A8600960311 /* RKResourceParserProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		BC6D0DE31E0AA29600E4A162 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DE41E0AA2AC00E4A162 /* RKRezResourceFile.h */,
+				BC6D0DE51E0AA2AC00E4A162 /* RKRezResourceFile.m */,
+				80E295AA1ED087E800BCA35B /* RKNdatResourceFile.h */,
+				80E295AB1ED087E800BCA35B /* RKNdatResourceFile.m */,
+			);
+			name = Wrappers;
+			sourceTree = "<group>";
+		};
+		BC6D0DEA1E0ACD7500E4A162 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DEB1E0ACD8100E4A162 /* Rez */,
+			);
+			name = "Test Data";
+			sourceTree = "<group>";
+		};
+		BC6D0DEB1E0ACD8100E4A162 /* Rez */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D0DEC1E0ACD8900E4A162 /* Test1.rez */,
+			);
+			name = Rez;
+			sourceTree = "<group>";
+		};
+		BC7519501E3F779F00960311 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				BC7519531E3F81DA00960311 /* RKPictureResourceParser.h */,
+				BC7519541E3F81DA00960311 /* RKPictureResourceParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		BC7519571E3F87DA00960311 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BC7519581E3F87F900960311 /* NSData+Parsing.h */,
+				BC7519591E3F87F900960311 /* NSData+Parsing.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BC6D0D911E0A4FA300E4A162 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80E295AC1ED087E800BCA35B /* RKNdatResourceFile.h in Headers */,
+				80E295A91ED0451400BCA35B /* Ndat.h in Headers */,
+				BC7519521E3F7A8600960311 /* RKResourceParserProtocol.h in Headers */,
+				BC7519551E3F81DA00960311 /* RKPictureResourceParser.h in Headers */,
+				BC6D0DA51E0A4FA400E4A162 /* ResourceKit.h in Headers */,
+				80D243C01E0BAF430040CF83 /* RKResourceFork.h in Headers */,
+				BC6D0DE61E0AA2AC00E4A162 /* RKRezResourceFile.h in Headers */,
+				80D243CB1E0C30BB0040CF83 /* RKResource.h in Headers */,
+				BC6D0DE21E0A9BEF00E4A162 /* RKResourceFileProtocol.h in Headers */,
+				80D243AF1E0AF6430040CF83 /* Allocations.h in Headers */,
+				BC75195A1E3F87F900960311 /* NSData+Parsing.h in Headers */,
+				80181E361ED00FAD00814023 /* RKPackBitsDecoder.h in Headers */,
+				80D243B01E0AF6430040CF83 /* DataFile.h in Headers */,
+				80D243AE1E0AF63D0040CF83 /* Rez.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BC6D0D931E0A4FA300E4A162 /* ResourceKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC6D0DA81E0A4FA400E4A162 /* Build configuration list for PBXNativeTarget "ResourceKit" */;
+			buildPhases = (
+				BC6D0D8F1E0A4FA300E4A162 /* Sources */,
+				BC6D0D901E0A4FA300E4A162 /* Frameworks */,
+				BC6D0D911E0A4FA300E4A162 /* Headers */,
+				BC6D0D921E0A4FA300E4A162 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResourceKit;
+			productName = ResourceKit;
+			productReference = BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BC6D0D9C1E0A4FA400E4A162 /* ResourceKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC6D0DAB1E0A4FA400E4A162 /* Build configuration list for PBXNativeTarget "ResourceKitTests" */;
+			buildPhases = (
+				BC6D0D991E0A4FA400E4A162 /* Sources */,
+				BC6D0D9A1E0A4FA400E4A162 /* Frameworks */,
+				BC6D0D9B1E0A4FA400E4A162 /* Resources */,
+				BC6D0DED1E0ACF1200E4A162 /* Test Data (Rez) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC6D0DA01E0A4FA400E4A162 /* PBXTargetDependency */,
+			);
+			name = ResourceKitTests;
+			productName = ResourceKitTests;
+			productReference = BC6D0D9D1E0A4FA400E4A162 /* ResourceKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC6D0DB11E0A4FE600E4A162 /* ResEdit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC6D0DC01E0A4FE600E4A162 /* Build configuration list for PBXNativeTarget "ResEdit" */;
+			buildPhases = (
+				BC6D0DAE1E0A4FE600E4A162 /* Sources */,
+				BC6D0DAF1E0A4FE600E4A162 /* Frameworks */,
+				BC6D0DB01E0A4FE600E4A162 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80D243B21E0AF6530040CF83 /* PBXTargetDependency */,
+			);
+			name = ResEdit;
+			productName = ResEdit;
+			productReference = BC6D0DB21E0A4FE600E4A162 /* ResEdit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC6D0D8B1E0A4FA300E4A162 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Tom Hancocks";
+				TargetAttributes = {
+					BC6D0D931E0A4FA300E4A162 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					BC6D0D9C1E0A4FA400E4A162 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					BC6D0DB11E0A4FE600E4A162 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BC6D0D8E1E0A4FA300E4A162 /* Build configuration list for PBXProject "OpenNova" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC6D0D8A1E0A4FA300E4A162;
+			productRefGroup = BC6D0D951E0A4FA300E4A162 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC6D0D931E0A4FA300E4A162 /* ResourceKit */,
+				BC6D0D9C1E0A4FA400E4A162 /* ResourceKitTests */,
+				BC6D0DB11E0A4FE600E4A162 /* ResEdit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC6D0D921E0A4FA300E4A162 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6D0D9B1E0A4FA400E4A162 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6D0DB01E0A4FE600E4A162 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6D0DBB1E0A4FE600E4A162 /* Assets.xcassets in Resources */,
+				BC6D0DBE1E0A4FE600E4A162 /* MainMenu.xib in Resources */,
+				80181E3D1ED01BF400814023 /* REPictureResourceViewController.xib in Resources */,
+				80E295B31ED0B27E00BCA35B /* REResourceBrowserWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC6D0D8F1E0A4FA300E4A162 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6D0DE71E0AA2AC00E4A162 /* RKRezResourceFile.m in Sources */,
+				80E295AD1ED087E800BCA35B /* RKNdatResourceFile.m in Sources */,
+				BC75195B1E3F87F900960311 /* NSData+Parsing.m in Sources */,
+				80181E371ED00FAD00814023 /* RKPackBitsDecoder.m in Sources */,
+				BC6D0DC91E0A504800E4A162 /* Rez.c in Sources */,
+				80D243C11E0BAF430040CF83 /* RKResourceFork.m in Sources */,
+				80E295A81ED0451400BCA35B /* Ndat.c in Sources */,
+				80D243CC1E0C30BB0040CF83 /* RKResource.m in Sources */,
+				BC7519561E3F81DA00960311 /* RKPictureResourceParser.m in Sources */,
+				BC6D0DCE1E0A50DB00E4A162 /* DataFile.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6D0D991E0A4FA400E4A162 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6D0DE91E0ACCA000E4A162 /* RKRezResourceFileTests.m in Sources */,
+				BC6D0DDE1E0A5B6A00E4A162 /* AllocationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6D0DAE1E0A4FE600E4A162 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80E295BD1ED15EDD00BCA35B /* REResourceHeaderView.m in Sources */,
+				BC6D0DB91E0A4FE600E4A162 /* main.m in Sources */,
+				BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */,
+				80E295B61ED0B78F00BCA35B /* REResourceBrowserDataSource.m in Sources */,
+				80181E3C1ED01BF400814023 /* REPictureResourceViewController.m in Sources */,
+				80E295B21ED0B27E00BCA35B /* REResourceBrowserWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80D243B21E0AF6530040CF83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC6D0D931E0A4FA300E4A162 /* ResourceKit */;
+			targetProxy = 80D243B11E0AF6530040CF83 /* PBXContainerItemProxy */;
+		};
+		BC6D0DA01E0A4FA400E4A162 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC6D0D931E0A4FA300E4A162 /* ResourceKit */;
+			targetProxy = BC6D0D9F1E0A4FA400E4A162 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC6D0DBC1E0A4FE600E4A162 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC6D0DBD1E0A4FE600E4A162 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC6D0DA61E0A4FA400E4A162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BC6D0DA71E0A4FA400E4A162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC6D0DA91E0A4FA400E4A162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ResourceKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomhancocks.ResourceKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BC6D0DAA1E0A4FA400E4A162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ResourceKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomhancocks.ResourceKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BC6D0DAC1E0A4FA400E4A162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ResourceKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomhancocks.ResourceKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BC6D0DAD1E0A4FA400E4A162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ResourceKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomhancocks.ResourceKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BC6D0DC11E0A4FE600E4A162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ResEdit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomhancocks.ResEdit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BC6D0DC21E0A4FE600E4A162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ResEdit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomhancocks.ResEdit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC6D0D8E1E0A4FA300E4A162 /* Build configuration list for PBXProject "OpenNova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6D0DA61E0A4FA400E4A162 /* Debug */,
+				BC6D0DA71E0A4FA400E4A162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC6D0DA81E0A4FA400E4A162 /* Build configuration list for PBXNativeTarget "ResourceKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6D0DA91E0A4FA400E4A162 /* Debug */,
+				BC6D0DAA1E0A4FA400E4A162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC6D0DAB1E0A4FA400E4A162 /* Build configuration list for PBXNativeTarget "ResourceKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6D0DAC1E0A4FA400E4A162 /* Debug */,
+				BC6D0DAD1E0A4FA400E4A162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC6D0DC01E0A4FE600E4A162 /* Build configuration list for PBXNativeTarget "ResEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6D0DC11E0A4FE600E4A162 /* Debug */,
+				BC6D0DC21E0A4FE600E4A162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC6D0D8B1E0A4FA300E4A162 /* Project object */;
+}
