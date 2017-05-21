@@ -37,6 +37,7 @@ typedef NS_ENUM(uint16_t, RKPictureOpcode)
     RKPictureOpcode_directBitsRect = 0x009A,
     RKPictureOpcode_eof = 0x00FF,
     RKPictureOpcode_defHilite = 0x001E,
+    RKPictureOpcode_longComment = 0x00A1,
     RKPictureOpcode_extHeader = 0x0C00,
 };
 
@@ -210,6 +211,10 @@ typedef struct {
                 [self parseDirectBitsRect];
                 break;
                 
+            case RKPictureOpcode_longComment:
+                [self parseLongComment];
+                break;
+                
             case RKPictureOpcode_nop:
             case RKPictureOpcode_extHeader:
             case RKPictureOpcode_defHilite:
@@ -278,14 +283,25 @@ typedef struct {
     _data.position += 2;
     
     // Ensure the packing type is the correct value. We're only interested in pack
-    // type 3.
-    if (px->packType != 3) {
+    // type 3 and 4.
+    if (!(px->packType == 3 || px->packType == 4)) {
         NSLog(@"Unsupported pack type: %d", px->packType);
         abort();
     }
     
-    uint8_t *raw = calloc(2 * sourceRect.width, sizeof(*raw));
-    uint16_t *pxShortArray = calloc(destinationRect.width * destinationRect.height, sizeof(*pxShortArray));
+    uint8_t *raw = NULL;
+    uint16_t *pxShortArray = NULL;
+    uint32_t *pxArray = NULL;
+    
+    if (px->packType == 3) {
+        raw = calloc(px->rowBytes, sizeof(*raw));
+        pxShortArray = calloc(sourceRect.height * (px->rowBytes + 1) / 2, sizeof(*pxShortArray));
+    }
+    else if (px->packType == 4) {
+        raw = calloc(px->cmpCount * px->rowBytes / 4, sizeof(*raw));
+        pxArray = calloc(sourceRect.height * (px->rowBytes + 3) / 4, sizeof(*pxArray));
+    }
+    
     
     uint32_t pxBufOffset = 0;
     uint16_t packedBytesCount = 0;
@@ -295,13 +311,43 @@ typedef struct {
         
         // Read a single scanline from the data. This will need to be decoded.
         NSData *encodedScanline = [_data readDataOfLength:packedBytesCount];
-        NSData *decodedScanline = [RKPackBitsDecoder decodeData:encodedScanline withValueSize:sizeof(uint16_t)];
-        [decodedScanline getBytes:raw length:sourceRect.width * 2];
-        
-        // Store the decoded pixel data.
-        for (uint32_t i = 0; i < sourceRect.width; ++i) {
-            pxShortArray[pxBufOffset + i] = (uint16_t)(((0xFF & raw[2*i]) << 8) | (0xFF & raw[2*i+1]));
+        if (px->packType == 3) {
+            NSData *decodedScanline = [RKPackBitsDecoder decodeData:encodedScanline withValueSize:sizeof(uint16_t)];
+            [decodedScanline getBytes:raw length:sourceRect.width * 2];
         }
+        else {
+            NSData *decodedScanline = [RKPackBitsDecoder decodeData:encodedScanline withValueSize:1];
+            [decodedScanline getBytes:raw length:sourceRect.width * 2];
+        }
+        
+        if (px->packType == 3) {
+            // Store the decoded pixel data.
+            for (uint32_t i = 0; i < sourceRect.width; ++i) {
+                pxShortArray[pxBufOffset + i] = (uint16_t)(((0xFF & raw[2*i]) << 8) | (0xFF & raw[2*i+1]));
+            }
+        }
+        else {
+            if (px->cmpCount == 3) {
+                // RGB Data
+                for (int32_t i = 0; i < sourceRect.width; ++i) {
+                    pxArray[pxBufOffset + i] = 0xFF000000
+                    | (raw[i] & 0xFF) << 16
+                    | (raw[px->bounds.width + i] & 0xFF) << 8
+                    | (raw[2 * px->bounds.width + i] & 0xFF);
+                }
+            }
+            else {
+                // ARGB Data
+                for (int32_t i = 0; i < sourceRect.width; ++i) {
+                    pxArray[pxBufOffset + i] =
+                    (raw[i] & 0xFF) << 24
+                    | (raw[px->bounds.width + i] & 0xFF) << 16
+                    | (raw[2 * px->bounds.width + i] & 0xFF) << 8
+                    | (raw[3 * px->bounds.width + i] & 0xFF);
+                }
+            }
+        }
+        
         
         pxBufOffset += sourceRect.width;
     }
@@ -314,12 +360,23 @@ typedef struct {
     uint32_t rgbCount = sourceLength * 4;
     uint8_t *rgbRaw = calloc(rgbCount, sizeof(*rgbRaw));
     
-    for (uint32_t p = 0, i = 0; i < sourceLength; ++i) {
-        rgbRaw[p++] = ((pxShortArray[i] & 0x7c00) >> 10) << 3;
-        rgbRaw[p++] = ((pxShortArray[i] & 0x03e0) >> 5) << 3;
-        rgbRaw[p++] = ((pxShortArray[i] & 0x001f) << 3);
-        rgbRaw[p++] = UINT8_MAX;
+    if (px->packType == 3) {
+        for (uint32_t p = 0, i = 0; i < sourceLength; ++i) {
+            rgbRaw[p++] = ((pxShortArray[i] & 0x7c00) >> 10) << 3;
+            rgbRaw[p++] = ((pxShortArray[i] & 0x03e0) >> 5) << 3;
+            rgbRaw[p++] = ((pxShortArray[i] & 0x001f) << 3);
+            rgbRaw[p++] = UINT8_MAX;
+        }
     }
+    else {
+        for (uint32_t p = 0, i = 0; i < sourceLength; ++i) {
+            rgbRaw[p++] = (pxArray[i] & 0xFF0000) >> 16;
+            rgbRaw[p++] = (pxArray[i] & 0xFF00) >> 8;
+            rgbRaw[p++] = (pxArray[i] & 0xFF);
+            rgbRaw[p++] = (pxArray[i] & 0xFF000000) >> 24;
+        }
+    }
+    
     
     CGImageRef image = [self cgImageWithRGBData:rgbRaw frame:destinationRect];
     _currentImage = [[NSImage alloc] initWithCGImage:image size:CGSizeMake(destinationRect.width, destinationRect.height)];
@@ -328,6 +385,18 @@ typedef struct {
     free(rgbRaw);
     free(raw);
     free(px);
+}
+
+
+- (void)parseLongComment
+{
+    int16_t kind = _data.readWord;
+    int16_t length = _data.readWord;
+    
+    char *comment = calloc(length + 1, sizeof(*comment));
+    [[_data readDataOfLength:length] getBytes:comment length:length];
+    
+    NSLog(@"Comment (%d): %s", kind, comment);
 }
 
 
