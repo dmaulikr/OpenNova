@@ -119,7 +119,7 @@ static const void * RKResourceParsersDictionaryKey = &RKResourceParsersDictionar
 {
     NSMutableDictionary <NSString *, Class> *parsers = objc_getAssociatedObject(self, RKResourceParsersDictionaryKey) ?: [NSMutableDictionary new];
     [parsers setObject:cls forKey:type];
-    objc_setAssociatedObject(self, RKResourceParsersDictionaryKey, parsers, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, RKResourceParsersDictionaryKey, parsers, OBJC_ASSOCIATION_RETAIN);
 }
 
 + (nullable Class)parserForType:(nonnull NSString *)type

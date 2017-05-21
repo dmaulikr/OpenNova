@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,33 +22,59 @@
 // SOFTWARE.
 //
 
+#import "RKStringListResourceParser.h"
+#import "RKResource.h"
+#import "NSData+Parsing.h"
 
-#import "REPICTEditor.h"
-#import <ResourceKit/ResourceKit.h>
+@implementation RKStringListResourceParser {
+@private
+    __strong NSMutableArray <NSString *> *_strings;
+    __strong NSData * _data;
+}
 
-@interface REPICTEditor ()
-@property (strong) IBOutlet NSView *view;
-@property (strong) IBOutlet NSImageView *imageView;
-@end
+#pragma mark - Auto-Loading
 
-@implementation REPICTEditor
++ (void)register
+{
+    // Register the parser in the resource class. This will allow the resource
+    // to lookup an appropriate parser when required.
+    [RKResource registerParser:self forType:@"STR#"];
+}
 
-@synthesize resource = _resource;
 
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource
+#pragma mark - Top Level
+
++ (id)parseData:(NSData *)data
+{
+    RKStringListResourceParser *parser = [[self alloc] initWithData:data];
+    return parser ? parser->_strings : nil;
+}
+
+
+#pragma mark - Internal Instantiation
+
+- (instancetype)initWithData:(NSData *)data
 {
     if (self = [super init]) {
-        if (![[NSBundle mainBundle] loadNibNamed:@"REPICTEditor" owner:self topLevelObjects:nil]) {
+        _data = data.copy;
+        _strings = NSMutableArray.new;
+        if (![self parse]) {
             return nil;
         }
-        
-        _resource = resource;
-        
-        self.view.wantsLayer = YES;
-        self.view.layer.backgroundColor = NSColor.darkGrayColor.CGColor;
-        self.imageView.image = (NSImage *)self.resource.object;
     }
     return self;
+}
+
+
+#pragma mark - Data Reading
+
+- (BOOL)parse
+{
+    uint16_t stringCount = _data.readWord;
+    for (; stringCount > 0; --stringCount) {
+        [_strings addObject:_data.readPString];
+    }
+    return YES;
 }
 
 @end

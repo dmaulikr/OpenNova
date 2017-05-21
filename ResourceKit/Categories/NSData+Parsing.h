@@ -64,4 +64,8 @@ typedef NS_ENUM(NSUInteger, RKDataEndianType)
 /// will increment the position of the data accordingly.
 - (NSData *)readDataOfLength:(uint32_t)length;
 
+/// Reads a pascal style string from the receiver and returns an NSString instance.
+/// This will increment the position of the data accordingly.
+- (NSString *)readPString;
+
 @end

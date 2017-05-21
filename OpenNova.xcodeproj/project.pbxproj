@@ -26,6 +26,10 @@
 		80E295BD1ED15EDD00BCA35B /* REResourceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295BC1ED15EDD00BCA35B /* REResourceHeaderView.m */; };
 		80E295C31ED18A0400BCA35B /* REPICTEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295C11ED18A0400BCA35B /* REPICTEditor.m */; };
 		80E295C41ED18A0400BCA35B /* REPICTEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E295C21ED18A0400BCA35B /* REPICTEditor.xib */; };
+		80E295C71ED1F10200BCA35B /* RKStringListResourceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 80E295C51ED1F10200BCA35B /* RKStringListResourceParser.h */; };
+		80E295C81ED1F10200BCA35B /* RKStringListResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295C61ED1F10200BCA35B /* RKStringListResourceParser.m */; };
+		80E295CC1ED1F2B600BCA35B /* REStringListEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295CB1ED1F2B600BCA35B /* REStringListEditor.m */; };
+		80E295CE1ED1F2CC00BCA35B /* REStringListEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E295CD1ED1F2CC00BCA35B /* REStringListEditor.xib */; };
 		BC6D0D9E1E0A4FA400E4A162 /* ResourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */; };
 		BC6D0DA51E0A4FA400E4A162 /* ResourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */; };
@@ -99,6 +103,12 @@
 		80E295C01ED18A0400BCA35B /* REPICTEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPICTEditor.h; sourceTree = "<group>"; };
 		80E295C11ED18A0400BCA35B /* REPICTEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPICTEditor.m; sourceTree = "<group>"; };
 		80E295C21ED18A0400BCA35B /* REPICTEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = REPICTEditor.xib; sourceTree = "<group>"; };
+		80E295C51ED1F10200BCA35B /* RKStringListResourceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKStringListResourceParser.h; path = ResourceFork/Parsers/RKStringListResourceParser.h; sourceTree = "<group>"; };
+		80E295C61ED1F10200BCA35B /* RKStringListResourceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKStringListResourceParser.m; path = ResourceFork/Parsers/RKStringListResourceParser.m; sourceTree = "<group>"; };
+		80E295CA1ED1F2B600BCA35B /* REStringListEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REStringListEditor.h; path = "STR#/REStringListEditor.h"; sourceTree = "<group>"; };
+		80E295CB1ED1F2B600BCA35B /* REStringListEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REStringListEditor.m; path = "STR#/REStringListEditor.m"; sourceTree = "<group>"; };
+		80E295CD1ED1F2CC00BCA35B /* REStringListEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = REStringListEditor.xib; path = "STR#/REStringListEditor.xib"; sourceTree = "<group>"; };
+		80E295CF1ED1F36A00BCA35B /* REResourceEditorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REResourceEditorProtocol.h; sourceTree = "<group>"; };
 		BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceKit.h; sourceTree = "<group>"; };
 		BC6D0D981E0A4FA400E4A162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,6 +201,8 @@
 		80E295BE1ED18A0400BCA35B /* ResourceEditors */ = {
 			isa = PBXGroup;
 			children = (
+				80E295CF1ED1F36A00BCA35B /* REResourceEditorProtocol.h */,
+				80E295C91ED1F28800BCA35B /* STR# */,
 				80E295BF1ED18A0400BCA35B /* PICT */,
 			);
 			path = ResourceEditors;
@@ -204,6 +216,16 @@
 				80E295C21ED18A0400BCA35B /* REPICTEditor.xib */,
 			);
 			path = PICT;
+			sourceTree = "<group>";
+		};
+		80E295C91ED1F28800BCA35B /* STR# */ = {
+			isa = PBXGroup;
+			children = (
+				80E295CA1ED1F2B600BCA35B /* REStringListEditor.h */,
+				80E295CB1ED1F2B600BCA35B /* REStringListEditor.m */,
+				80E295CD1ED1F2CC00BCA35B /* REStringListEditor.xib */,
+			);
+			name = "STR#";
 			sourceTree = "<group>";
 		};
 		BC6D0D8A1E0A4FA300E4A162 = {
@@ -366,6 +388,8 @@
 			children = (
 				BC7519531E3F81DA00960311 /* RKPictureResourceParser.h */,
 				BC7519541E3F81DA00960311 /* RKPictureResourceParser.m */,
+				80E295C51ED1F10200BCA35B /* RKStringListResourceParser.h */,
+				80E295C61ED1F10200BCA35B /* RKStringListResourceParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -396,6 +420,7 @@
 				80D243CB1E0C30BB0040CF83 /* RKResource.h in Headers */,
 				BC6D0DE21E0A9BEF00E4A162 /* RKResourceFileProtocol.h in Headers */,
 				80D243AF1E0AF6430040CF83 /* Allocations.h in Headers */,
+				80E295C71ED1F10200BCA35B /* RKStringListResourceParser.h in Headers */,
 				BC75195A1E3F87F900960311 /* NSData+Parsing.h in Headers */,
 				80181E361ED00FAD00814023 /* RKPackBitsDecoder.h in Headers */,
 				80D243B01E0AF6430040CF83 /* DataFile.h in Headers */,
@@ -526,6 +551,7 @@
 				BC6D0DBB1E0A4FE600E4A162 /* Assets.xcassets in Resources */,
 				BC6D0DBE1E0A4FE600E4A162 /* MainMenu.xib in Resources */,
 				80E295C41ED18A0400BCA35B /* REPICTEditor.xib in Resources */,
+				80E295CE1ED1F2CC00BCA35B /* REStringListEditor.xib in Resources */,
 				80E295B31ED0B27E00BCA35B /* REResourceBrowserWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,6 +569,7 @@
 				80181E371ED00FAD00814023 /* RKPackBitsDecoder.m in Sources */,
 				BC6D0DC91E0A504800E4A162 /* Rez.c in Sources */,
 				80D243C11E0BAF430040CF83 /* RKResourceFork.m in Sources */,
+				80E295C81ED1F10200BCA35B /* RKStringListResourceParser.m in Sources */,
 				80E295A81ED0451400BCA35B /* Ndat.c in Sources */,
 				80D243CC1E0C30BB0040CF83 /* RKResource.m in Sources */,
 				BC7519561E3F81DA00960311 /* RKPictureResourceParser.m in Sources */,
@@ -569,6 +596,7 @@
 				80E295B61ED0B78F00BCA35B /* REResourceBrowserDataSource.m in Sources */,
 				80E295C31ED18A0400BCA35B /* REPICTEditor.m in Sources */,
 				80E295B21ED0B27E00BCA35B /* REResourceBrowserWindow.m in Sources */,
+				80E295CC1ED1F2B600BCA35B /* REStringListEditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

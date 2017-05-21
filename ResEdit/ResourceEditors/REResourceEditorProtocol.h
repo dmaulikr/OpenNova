@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,15 @@
 // SOFTWARE.
 //
 
-#import "REResourceEditorProtocol.h"
+#import <Cocoa/Cocoa.h>
 
-@interface REPICTEditor : NSObject <REResourceEditorProtocol>
+@class RKResource;
+
+@protocol REResourceEditorProtocol <NSObject>
+
+@property (nullable, strong, readonly) NSView *view;
+@property (nonnull, readonly) RKResource *resource;
+
+- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
 
 @end

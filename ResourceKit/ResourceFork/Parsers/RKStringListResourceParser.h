@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@
 // SOFTWARE.
 //
 
-#import "REResourceEditorProtocol.h"
+#import "RKResourceParserProtocol.h"
 
-@interface REPICTEditor : NSObject <REResourceEditorProtocol>
+@interface RKStringListResourceParser : NSObject <RKResourceParserProtocol>
 
 @end

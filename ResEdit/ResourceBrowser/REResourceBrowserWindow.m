@@ -26,6 +26,8 @@
 #import "REResourceBrowserDataSource.h"
 #import <ResourceKit/ResourceKit.h>
 #import "REPICTEditor.h"
+#import "REStringListEditor.h"
+#import "REResourceEditorProtocol.h"
 
 @interface REResourceBrowserWindow ()
 @property (nullable, strong) IBOutlet NSOutlineView *browserOutlineView;
@@ -36,7 +38,7 @@
 
 @property (nullable, strong) RKResourceFork *resourceFork;
 @property (nonnull, strong) REResourceBrowserDataSource *dataSource;
-@property (nullable, strong) REPICTEditor *pictureViewController;
+@property (nullable, strong) id <REResourceEditorProtocol> resourceEditor;
 @end
 
 @implementation REResourceBrowserWindow
@@ -101,12 +103,15 @@
 
 #pragma mark - Container
 
+- (void)removeContainerView
+{
+    [self.containerView removeConstraints:self.containerView.constraints];
+    [self.containerView.subviews.firstObject removeFromSuperview];
+}
+
 - (void)showContainerView:(NSView *)view
 {
     view = view ?: self.placeholderView;
-    
-    [self.containerView removeConstraints:self.containerView.constraints];
-    [self.containerView.subviews.firstObject removeFromSuperview];
     
     view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.containerView addSubview:view];
@@ -135,19 +140,30 @@
     self.resourceIdLabel.stringValue = [NSString stringWithFormat:@"%d", resource.id];
     self.resourceNameLabel.stringValue = [NSString stringWithFormat:@"%@", resource.name];
     
+    [self removeContainerView];
+    
     if ([resource.type isEqualToString:@"PICT"]) {
         [self loadPictureResource:resource];
     }
+    else if ([resource.type isEqualToString:@"STR#"]) {
+        [self loadStringListResource:resource];
+    }
     else {
         [self showContainerView:self.placeholderView];
+        return;
     }
+    
+    [self showContainerView:self.resourceEditor.view];
 }
 
 - (void)loadPictureResource:(RKResource *)resource
 {
-    self.pictureViewController = [[REPICTEditor alloc] initWithResource:resource];
-    [self showContainerView:self.pictureViewController.view];
+    self.resourceEditor = [[REPICTEditor alloc] initWithResource:resource];
 }
 
+- (void)loadStringListResource:(RKResource *)resource
+{
+    self.resourceEditor = [[REStringListEditor alloc] initWithResource:resource];
+}
 
 @end
