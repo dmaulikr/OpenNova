@@ -77,27 +77,52 @@
     return (item && [item isKindOfClass:NSString.class]);
 }
 
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
+{
+    return [self outlineView:outlineView isItemExpandable:item];
+}
+
 
 #pragma mark - Delegate
 
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
-    if ([item isKindOfClass:NSString.class] && [tableColumn.identifier isEqualToString:@"RKResourceId"]) {
-        NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"RKResourceTypeCell" owner:nil];
+    if ([self outlineView:outlineView isGroupItem:item]) {
+        NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"RKResourceTypeCell" owner:self];
         cell.textField.stringValue = item;
         return cell;
     }
     else if ([item isKindOfClass:RKResource.class] && [tableColumn.identifier isEqualToString:@"RKResourceId"]) {
-        NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"RKResourceTypeCell" owner:nil];
+        NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"RKResourceCell" owner:nil];
         cell.textField.stringValue = [NSString stringWithFormat:@"%d", ((RKResource *)item).id];
         return cell;
     }
     else if ([item isKindOfClass:RKResource.class] && [tableColumn.identifier isEqualToString:@"RKResourceName"]) {
-        NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"RKResourceTypeCell" owner:nil];
+        NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"RKResourceCell" owner:nil];
         cell.textField.stringValue = ((RKResource *)item).name;
         return cell;
     }
     return nil;
+}
+
+- (CGFloat)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item
+{
+    if ([item isKindOfClass:NSString.class]) {
+        return 30;
+    }
+    else {
+        return 20;
+    }
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
+{
+    if ([item isKindOfClass:NSString.class]) {
+        return NO;
+    }
+    else {
+        return YES;
+    }
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification

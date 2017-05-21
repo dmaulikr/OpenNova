@@ -31,7 +31,7 @@
     [[NSColor gridColor] setFill];
     [NSBezierPath fillRect:self.bounds];
     
-    [[NSColor colorWithWhite:0.97 alpha:1.0] setFill];
+    [[NSColor colorWithWhite:0.985 alpha:1.0] setFill];
     [NSBezierPath fillRect:NSMakeRect(0, 1, self.bounds.size.width, self.bounds.size.height)];
     
     [super drawRect:dirtyRect];
