@@ -22,16 +22,30 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
 
-@class RKResource;
+#import "REPICTEditor.h"
+#import <ResourceKit/ResourceKit.h>
 
-@interface REPictureResourceViewController : NSObject
+@interface REPICTEditor ()
+@property (strong) IBOutlet NSImageView *imageView;
+@end
 
-@property (strong) IBOutlet NSView *view;
+@implementation REPICTEditor
 
-@property (nonnull, readonly) RKResource *resource;
-
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
+- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource
+{
+    if (self = [super init]) {
+        if (![[NSBundle mainBundle] loadNibNamed:@"REPICTEditor" owner:self topLevelObjects:nil]) {
+            return nil;
+        }
+        
+        _resource = resource;
+        
+        self.view.wantsLayer = YES;
+        self.view.layer.backgroundColor = NSColor.darkGrayColor.CGColor;
+        self.imageView.image = (NSImage *)self.resource.object;
+    }
+    return self;
+}
 
 @end

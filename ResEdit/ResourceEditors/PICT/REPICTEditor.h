@@ -22,28 +22,16 @@
 // SOFTWARE.
 //
 
+#import <Cocoa/Cocoa.h>
 
-#import "REPictureResourceViewController.h"
-#import <ResourceKit/ResourceKit.h>
+@class RKResource;
 
-@interface REPictureResourceViewController ()
-@property (strong) IBOutlet NSImageView *imageView;
-@end
+@interface REPICTEditor : NSObject
 
-@implementation REPictureResourceViewController
+@property (strong) IBOutlet NSView *view;
 
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource
-{
-    if (self = [super init]) {
-        if (![[NSBundle mainBundle] loadNibNamed:@"REPictureResourceViewController" owner:self topLevelObjects:nil]) {
-            return nil;
-        }
-        
-        _resource = resource;
-        
-        self.imageView.image = (NSImage *)self.resource.object;
-    }
-    return self;
-}
+@property (nonnull, readonly) RKResource *resource;
+
+- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
 
 @end

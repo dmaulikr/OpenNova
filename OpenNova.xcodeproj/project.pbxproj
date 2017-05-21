@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		80181E361ED00FAD00814023 /* RKPackBitsDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 80181E341ED00FAD00814023 /* RKPackBitsDecoder.h */; };
 		80181E371ED00FAD00814023 /* RKPackBitsDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 80181E351ED00FAD00814023 /* RKPackBitsDecoder.m */; };
-		80181E3C1ED01BF400814023 /* REPictureResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80181E3A1ED01BF400814023 /* REPictureResourceViewController.m */; };
-		80181E3D1ED01BF400814023 /* REPictureResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80181E3B1ED01BF400814023 /* REPictureResourceViewController.xib */; };
 		80D243AE1E0AF63D0040CF83 /* Rez.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DC81E0A504800E4A162 /* Rez.h */; };
 		80D243AF1E0AF6430040CF83 /* Allocations.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DDA1E0A584F00E4A162 /* Allocations.h */; };
 		80D243B01E0AF6430040CF83 /* DataFile.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0DCD1E0A50DB00E4A162 /* DataFile.h */; };
@@ -26,6 +24,8 @@
 		80E295B31ED0B27E00BCA35B /* REResourceBrowserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E295B11ED0B27E00BCA35B /* REResourceBrowserWindow.xib */; };
 		80E295B61ED0B78F00BCA35B /* REResourceBrowserDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295B51ED0B78F00BCA35B /* REResourceBrowserDataSource.m */; };
 		80E295BD1ED15EDD00BCA35B /* REResourceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295BC1ED15EDD00BCA35B /* REResourceHeaderView.m */; };
+		80E295C31ED18A0400BCA35B /* REPICTEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295C11ED18A0400BCA35B /* REPICTEditor.m */; };
+		80E295C41ED18A0400BCA35B /* REPICTEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E295C21ED18A0400BCA35B /* REPICTEditor.xib */; };
 		BC6D0D9E1E0A4FA400E4A162 /* ResourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */; };
 		BC6D0DA51E0A4FA400E4A162 /* ResourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */; };
@@ -81,9 +81,6 @@
 /* Begin PBXFileReference section */
 		80181E341ED00FAD00814023 /* RKPackBitsDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKPackBitsDecoder.h; path = ResourceFork/Helpers/RKPackBitsDecoder.h; sourceTree = "<group>"; };
 		80181E351ED00FAD00814023 /* RKPackBitsDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKPackBitsDecoder.m; path = ResourceFork/Helpers/RKPackBitsDecoder.m; sourceTree = "<group>"; };
-		80181E391ED01BF400814023 /* REPictureResourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REPictureResourceViewController.h; path = PictureResourceWindow/REPictureResourceViewController.h; sourceTree = "<group>"; };
-		80181E3A1ED01BF400814023 /* REPictureResourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REPictureResourceViewController.m; path = PictureResourceWindow/REPictureResourceViewController.m; sourceTree = "<group>"; };
-		80181E3B1ED01BF400814023 /* REPictureResourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = REPictureResourceViewController.xib; path = PictureResourceWindow/REPictureResourceViewController.xib; sourceTree = "<group>"; };
 		80D243BE1E0BAF430040CF83 /* RKResourceFork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKResourceFork.h; path = ResourceFork/RKResourceFork.h; sourceTree = "<group>"; };
 		80D243BF1E0BAF430040CF83 /* RKResourceFork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKResourceFork.m; path = ResourceFork/RKResourceFork.m; sourceTree = "<group>"; };
 		80D243C91E0C30BB0040CF83 /* RKResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKResource.h; path = ResourceFork/Objects/RKResource.h; sourceTree = "<group>"; };
@@ -99,6 +96,9 @@
 		80E295B51ED0B78F00BCA35B /* REResourceBrowserDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REResourceBrowserDataSource.m; path = ResourceBrowser/REResourceBrowserDataSource.m; sourceTree = "<group>"; };
 		80E295BB1ED15EDD00BCA35B /* REResourceHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REResourceHeaderView.h; path = ResourceBrowser/REResourceHeaderView.h; sourceTree = "<group>"; };
 		80E295BC1ED15EDD00BCA35B /* REResourceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REResourceHeaderView.m; path = ResourceBrowser/REResourceHeaderView.m; sourceTree = "<group>"; };
+		80E295C01ED18A0400BCA35B /* REPICTEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPICTEditor.h; sourceTree = "<group>"; };
+		80E295C11ED18A0400BCA35B /* REPICTEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPICTEditor.m; sourceTree = "<group>"; };
+		80E295C21ED18A0400BCA35B /* REPICTEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = REPICTEditor.xib; sourceTree = "<group>"; };
 		BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceKit.h; sourceTree = "<group>"; };
 		BC6D0D981E0A4FA400E4A162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,16 +165,6 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		80181E381ED01BCA00814023 /* PictureResourceWindow */ = {
-			isa = PBXGroup;
-			children = (
-				80181E391ED01BF400814023 /* REPictureResourceViewController.h */,
-				80181E3A1ED01BF400814023 /* REPictureResourceViewController.m */,
-				80181E3B1ED01BF400814023 /* REPictureResourceViewController.xib */,
-			);
-			name = PictureResourceWindow;
-			sourceTree = "<group>";
-		};
 		80D243C81E0C30990040CF83 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +186,24 @@
 				80E295B11ED0B27E00BCA35B /* REResourceBrowserWindow.xib */,
 			);
 			name = ResourceBrowser;
+			sourceTree = "<group>";
+		};
+		80E295BE1ED18A0400BCA35B /* ResourceEditors */ = {
+			isa = PBXGroup;
+			children = (
+				80E295BF1ED18A0400BCA35B /* PICT */,
+			);
+			path = ResourceEditors;
+			sourceTree = "<group>";
+		};
+		80E295BF1ED18A0400BCA35B /* PICT */ = {
+			isa = PBXGroup;
+			children = (
+				80E295C01ED18A0400BCA35B /* REPICTEditor.h */,
+				80E295C11ED18A0400BCA35B /* REPICTEditor.m */,
+				80E295C21ED18A0400BCA35B /* REPICTEditor.xib */,
+			);
+			path = PICT;
 			sourceTree = "<group>";
 		};
 		BC6D0D8A1E0A4FA300E4A162 = {
@@ -250,7 +258,7 @@
 				BC6D0DB41E0A4FE600E4A162 /* AppDelegate.h */,
 				BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */,
 				80E295AE1ED0B25600BCA35B /* ResourceBrowser */,
-				80181E381ED01BCA00814023 /* PictureResourceWindow */,
+				80E295BE1ED18A0400BCA35B /* ResourceEditors */,
 				BC6D0DBA1E0A4FE600E4A162 /* Assets.xcassets */,
 				BC6D0DBC1E0A4FE600E4A162 /* MainMenu.xib */,
 				BC6D0DBF1E0A4FE600E4A162 /* Info.plist */,
@@ -517,7 +525,7 @@
 			files = (
 				BC6D0DBB1E0A4FE600E4A162 /* Assets.xcassets in Resources */,
 				BC6D0DBE1E0A4FE600E4A162 /* MainMenu.xib in Resources */,
-				80181E3D1ED01BF400814023 /* REPictureResourceViewController.xib in Resources */,
+				80E295C41ED18A0400BCA35B /* REPICTEditor.xib in Resources */,
 				80E295B31ED0B27E00BCA35B /* REResourceBrowserWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,7 +567,7 @@
 				BC6D0DB91E0A4FE600E4A162 /* main.m in Sources */,
 				BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */,
 				80E295B61ED0B78F00BCA35B /* REResourceBrowserDataSource.m in Sources */,
-				80181E3C1ED01BF400814023 /* REPictureResourceViewController.m in Sources */,
+				80E295C31ED18A0400BCA35B /* REPICTEditor.m in Sources */,
 				80E295B21ED0B27E00BCA35B /* REResourceBrowserWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

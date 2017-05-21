@@ -25,7 +25,7 @@
 #import "REResourceBrowserWindow.h"
 #import "REResourceBrowserDataSource.h"
 #import <ResourceKit/ResourceKit.h>
-#import "REPictureResourceViewController.h"
+#import "REPICTEditor.h"
 
 @interface REResourceBrowserWindow ()
 @property (nullable, strong) IBOutlet NSOutlineView *browserOutlineView;
@@ -36,7 +36,7 @@
 
 @property (nullable, strong) RKResourceFork *resourceFork;
 @property (nonnull, strong) REResourceBrowserDataSource *dataSource;
-@property (nullable, strong) REPictureResourceViewController *pictureViewController;
+@property (nullable, strong) REPICTEditor *pictureViewController;
 @end
 
 @implementation REResourceBrowserWindow
@@ -103,6 +103,8 @@
 
 - (void)showContainerView:(NSView *)view
 {
+    view = view ?: self.placeholderView;
+    
     [self.containerView removeConstraints:self.containerView.constraints];
     [self.containerView.subviews.firstObject removeFromSuperview];
     
@@ -143,7 +145,7 @@
 
 - (void)loadPictureResource:(RKResource *)resource
 {
-    self.pictureViewController = [[REPictureResourceViewController alloc] initWithResource:resource];
+    self.pictureViewController = [[REPICTEditor alloc] initWithResource:resource];
     [self showContainerView:self.pictureViewController.view];
 }
 
