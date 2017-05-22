@@ -22,19 +22,39 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "RKNovaSpinResourceParser.h"
+#import "RKResource.h"
+#import "EVSpinObject.h"
 
-@class RKResource;
+@implementation RKNovaSpinResourceParser
 
-@protocol REResourceEditorProtocol <NSObject>
+#pragma mark - Auto-Loading
 
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
++ (void)register
+{
+    // Register the parser in the resource class. This will allow the resource
+    // to lookup an appropriate parser when required.
+    [RKResource registerParser:self forType:@"spïn"];
+}
 
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
 
-@optional
+#pragma mark - Data Reading
 
-+ (void)registerEditor;
+- (BOOL)parse
+{
+    EVSpinObject *spin = EVSpinObject.new;
+    
+    spin.spritesId = self.readDwrd;
+    spin.masksId = self.readDwrd;
+    spin.xSize = self.readDwrd;
+    spin.ySize = self.readDwrd;
+    spin.xTiles = self.readDwrd;
+    spin.yTiles = self.readDwrd;
+    
+    self.object = spin;
+    
+    return YES;
+}
+
 
 @end

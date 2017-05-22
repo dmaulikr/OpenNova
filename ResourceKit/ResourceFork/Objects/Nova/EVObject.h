@@ -22,19 +22,8 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
-@class RKResource;
-
-@protocol REResourceEditorProtocol <NSObject>
-
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
-
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
-
-@optional
-
-+ (void)registerEditor;
+@protocol EVObject <NSObject>
 
 @end

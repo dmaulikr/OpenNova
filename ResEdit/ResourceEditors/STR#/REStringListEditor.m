@@ -24,6 +24,7 @@
 
 #import "REStringListEditor.h"
 #import <ResourceKit/ResourceKit.h>
+#import "REResourceBrowserWindow.h"
 
 @interface REStringListEditor () <NSTableViewDataSource, NSTableViewDelegate>
 @property (strong) IBOutlet NSTableView *stringsTableView;
@@ -34,6 +35,11 @@
 @implementation REStringListEditor
 
 @synthesize resource = _resource;
+
++ (void)registerEditor
+{
+    [REResourceBrowserWindow registerEditorClass:self forType:@"STR#"];
+}
 
 - (nonnull instancetype)initWithResource:(nonnull RKResource *)resource
 {

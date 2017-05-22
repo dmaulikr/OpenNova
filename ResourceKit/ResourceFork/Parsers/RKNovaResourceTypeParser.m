@@ -22,19 +22,66 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "RKNovaResourceTypeParser.h"
+#import "RKResource.h"
+#import "NSData+Parsing.h"
 
-@class RKResource;
+@implementation RKNovaResourceTypeParser {
+@private
+    __strong NSData * _data;
+}
 
-@protocol REResourceEditorProtocol <NSObject>
++ (void)register {}
 
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
+#pragma mark - Top Level
 
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
++ (id)parseData:(NSData *)data
+{
+    RKNovaResourceTypeParser *parser = [[self alloc] initWithData:data];
+    return parser ? parser.object : nil;
+}
 
-@optional
 
-+ (void)registerEditor;
+#pragma mark - Internal Instantiation
+
+- (instancetype)initWithData:(NSData *)data
+{
+    if (self = [super init]) {
+        _data = data.copy;
+        [self setup];
+        if (![self parse]) {
+            return nil;
+        }
+    }
+    return self;
+}
+
+
+#pragma mark - Data Reading
+
+- (void)setup
+{
+    // Empty implementation - here for the subclasses
+}
+
+- (BOOL)parse
+{
+    NSAssert(NO, @"This needs to be implemented in a subclass");
+    return NO;
+}
+
+
+#pragma mark - Nova Types
+
+- (int16_t)readWord
+{
+    return _data.readWord;
+}
+
+- (int32_t)readDwrd
+{
+    return _data.readDWord;
+}
+
 
 @end

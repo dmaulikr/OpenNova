@@ -22,19 +22,16 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "RKResourceParserProtocol.h"
+#import "EVObject.h"
 
-@class RKResource;
+@interface RKNovaResourceTypeParser : NSObject <RKResourceParserProtocol>
 
-@protocol REResourceEditorProtocol <NSObject>
+@property (nonatomic, strong) id <EVObject> object;
 
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
+- (void)setup;
 
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
-
-@optional
-
-+ (void)registerEditor;
+- (int16_t)readWord;
+- (int32_t)readDwrd;
 
 @end

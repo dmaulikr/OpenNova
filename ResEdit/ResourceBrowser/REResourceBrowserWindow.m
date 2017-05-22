@@ -22,12 +22,16 @@
 // SOFTWARE.
 //
 
+#import <objc/runtime.h>
 #import "REResourceBrowserWindow.h"
 #import "REResourceBrowserDataSource.h"
 #import <ResourceKit/ResourceKit.h>
 #import "REPICTEditor.h"
 #import "REStringListEditor.h"
+#import "RESpinEditor.h"
 #import "REResourceEditorProtocol.h"
+
+static void *REResourceEditorsKey = &REResourceEditorsKey;
 
 @interface REResourceBrowserWindow ()
 @property (nullable, strong) IBOutlet NSOutlineView *browserOutlineView;
@@ -75,6 +79,11 @@
 
 - (nullable instancetype)initWithResourceFork:(nonnull RKResourceFork *)resourceFork
 {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [REResourceBrowserWindow loadEditors];
+    });
+    
     if (self = [super initWithWindowNibName:NSStringFromClass(self.class)]) {
         self.resourceFork = resourceFork;
     }
@@ -125,6 +134,42 @@
 
 #pragma mark - Resource Editors
 
++ (void)loadEditors
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        int classCount = 0;
+        classCount = objc_getClassList(NULL, classCount);
+        if (classCount) {
+            Class *classes = (__unsafe_unretained Class *)calloc(classCount, sizeof(*classes));
+            objc_getClassList(classes, classCount);
+            
+            // Step through the classes and search for ones that conform to RKResourceParserProtocol
+            for (int i = 0; i < classCount; ++i) {
+                Method method = class_getClassMethod(classes[i], @selector(registerEditor));
+                if (method) {
+                    [classes[i] registerEditor];
+                }
+            }
+            
+        }
+    });
+}
+
++ (void)registerEditorClass:(Class)aEditorClass forType:(NSString *)resourceType
+{
+    NSMutableDictionary <NSString *, Class> *editors = objc_getAssociatedObject(self, REResourceEditorsKey);
+    editors = editors ?: NSMutableDictionary.new;
+    [editors setObject:aEditorClass forKey:resourceType];
+    objc_setAssociatedObject(self, REResourceEditorsKey, editors, OBJC_ASSOCIATION_RETAIN);
+}
+
++ (Class)resourceEditorForType:(NSString *)resourceType
+{
+    NSDictionary <NSString *, Class> *editors = objc_getAssociatedObject(self, REResourceEditorsKey);
+    return editors[resourceType];
+}
+
 - (void)loadResource:(RKResource *)resource
 {
     if (!resource) {
@@ -142,28 +187,14 @@
     
     [self removeContainerView];
     
-    if ([resource.type isEqualToString:@"PICT"]) {
-        [self loadPictureResource:resource];
-    }
-    else if ([resource.type isEqualToString:@"STR#"]) {
-        [self loadStringListResource:resource];
+    Class EditorClass = [[self class] resourceEditorForType:resource.type];
+    if (EditorClass) {
+        self.resourceEditor = [[EditorClass alloc] initWithResource:resource];
+        [self showContainerView:self.resourceEditor.view];
     }
     else {
         [self showContainerView:self.placeholderView];
-        return;
     }
-    
-    [self showContainerView:self.resourceEditor.view];
-}
-
-- (void)loadPictureResource:(RKResource *)resource
-{
-    self.resourceEditor = [[REPICTEditor alloc] initWithResource:resource];
-}
-
-- (void)loadStringListResource:(RKResource *)resource
-{
-    self.resourceEditor = [[REStringListEditor alloc] initWithResource:resource];
 }
 
 @end

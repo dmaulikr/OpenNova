@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,39 +22,61 @@
 // SOFTWARE.
 //
 
-
-#import "REPICTEditor.h"
+#import "REDefaultNovaTypeEditor.h"
+#import "RENovaTypeProperty.h"
 #import <ResourceKit/ResourceKit.h>
-#import "REResourceBrowserWindow.h"
 
-@interface REPICTEditor ()
+@interface REDefaultNovaTypeEditor () <NSTableViewDataSource, NSTableViewDelegate>
+@property (strong) IBOutlet NSTableView *propertiesTableView;
 @property (strong) IBOutlet NSView *view;
-@property (strong) IBOutlet NSImageView *imageView;
 @end
 
-@implementation REPICTEditor
+@implementation REDefaultNovaTypeEditor
 
 @synthesize resource = _resource;
-
-+ (void)registerEditor
-{
-    [REResourceBrowserWindow registerEditorClass:self forType:@"PICT"];
-}
 
 - (nonnull instancetype)initWithResource:(nonnull RKResource *)resource
 {
     if (self = [super init]) {
-        if (![[NSBundle mainBundle] loadNibNamed:@"REPICTEditor" owner:self topLevelObjects:nil]) {
+        if (![[NSBundle mainBundle] loadNibNamed:@"REDefaultNovaTypeEditor" owner:self topLevelObjects:nil]) {
             return nil;
         }
         
         _resource = resource;
-        
-        self.view.wantsLayer = YES;
-        self.view.layer.backgroundColor = NSColor.darkGrayColor.CGColor;
-        self.imageView.image = (NSImage *)self.resource.object;
     }
     return self;
+}
+
+- (NSArray <RENovaTypeProperty *> *)properties
+{
+    return @[];
+}
+
+
+#pragma mark - Data Source / Delegate
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return self.properties.count;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    if ([tableColumn.identifier isEqualToString:@"PropertyName"]) {
+        NSTableCellView * cell = [tableView makeViewWithIdentifier:@"PropertyNameCell" owner:nil];
+        cell.textField.stringValue = self.properties[row].displayName;
+        return cell;
+    }
+    else {
+        NSTableCellView * cell = [tableView makeViewWithIdentifier:@"PropertyBasicValueCell" owner:nil];
+        cell.textField.stringValue = @"";
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    return 25.0;
 }
 
 @end

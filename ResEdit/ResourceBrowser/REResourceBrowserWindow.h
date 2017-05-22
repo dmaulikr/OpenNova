@@ -26,6 +26,8 @@
 
 @interface REResourceBrowserWindow : NSWindowController
 
++ (void)registerEditorClass:(nonnull Class)aEditorClass forType:(nonnull NSString *)resourceType;
+
 + (void)openResourceFileWithCompletion:(nonnull void(^)(REResourceBrowserWindow *_Nonnull window))handler;
 
 @end

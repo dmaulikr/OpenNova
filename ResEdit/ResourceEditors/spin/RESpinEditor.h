@@ -22,19 +22,8 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "REDefaultNovaTypeEditor.h"
 
-@class RKResource;
-
-@protocol REResourceEditorProtocol <NSObject>
-
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
-
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
-
-@optional
-
-+ (void)registerEditor;
+@interface RESpinEditor : REDefaultNovaTypeEditor
 
 @end

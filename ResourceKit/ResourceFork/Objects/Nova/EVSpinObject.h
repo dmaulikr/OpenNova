@@ -22,19 +22,15 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "EVObject.h"
 
-@class RKResource;
+@interface EVSpinObject : NSObject <EVObject>
 
-@protocol REResourceEditorProtocol <NSObject>
-
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
-
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
-
-@optional
-
-+ (void)registerEditor;
+@property (nonatomic, assign) int32_t spritesId;
+@property (nonatomic, assign) int32_t masksId;
+@property (nonatomic, assign) int32_t xSize;
+@property (nonatomic, assign) int32_t ySize;
+@property (nonatomic, assign) int32_t xTiles;
+@property (nonatomic, assign) int32_t yTiles;
 
 @end

@@ -22,19 +22,26 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "RESpinEditor.h"
+#import "RENovaTypeProperty.h"
+#import "REResourceBrowserWindow.h"
 
-@class RKResource;
+@implementation RESpinEditor
 
-@protocol REResourceEditorProtocol <NSObject>
++ (void)registerEditor
+{
+    [REResourceBrowserWindow registerEditorClass:self forType:@"spïn"];
+}
 
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
-
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
-
-@optional
-
-+ (void)registerEditor;
+- (NSArray<RENovaTypeProperty *> *)properties
+{
+    return @[[RENovaTypeProperty withDisplayName:@"Sprites ID" forProperty:@"spritesId"],
+             [RENovaTypeProperty withDisplayName:@"Masks ID" forProperty:@"masksId"],
+             [RENovaTypeProperty withDisplayName:@"X Size" forProperty:@"xSize"],
+             [RENovaTypeProperty withDisplayName:@"Y Size" forProperty:@"ySize"],
+             [RENovaTypeProperty withDisplayName:@"X Tiles" forProperty:@"xTiles"],
+             [RENovaTypeProperty withDisplayName:@"Y Tiles" forProperty:@"yTiles"],
+             ];
+}
 
 @end

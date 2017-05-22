@@ -22,19 +22,16 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "RENovaTypeProperty.h"
 
-@class RKResource;
+@implementation RENovaTypeProperty
 
-@protocol REResourceEditorProtocol <NSObject>
-
-@property (nullable, strong, readonly) NSView *view;
-@property (nonnull, readonly) RKResource *resource;
-
-- (nonnull instancetype)initWithResource:(nonnull RKResource *)resource;
-
-@optional
-
-+ (void)registerEditor;
++ (instancetype)withDisplayName:(NSString *)displayName forProperty:(NSString *)name
+{
+    RENovaTypeProperty *property = RENovaTypeProperty.new;
+    property->_name = name.copy;
+    property->_displayName = displayName.copy;
+    return property;
+}
 
 @end
