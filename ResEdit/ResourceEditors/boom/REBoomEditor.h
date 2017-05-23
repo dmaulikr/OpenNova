@@ -22,15 +22,8 @@
 // SOFTWARE.
 //
 
-#import "EVObject.h"
+#import "REDefaultNovaTypeEditor.h"
 
-@interface EVSpinObject : NSObject <EVObject>
-
-@property (nonatomic, assign) int16_t spritesId;
-@property (nonatomic, assign) int16_t masksId;
-@property (nonatomic, assign) int16_t xSize;
-@property (nonatomic, assign) int16_t ySize;
-@property (nonatomic, assign) int16_t xTiles;
-@property (nonatomic, assign) int16_t yTiles;
+@interface REBoomEditor : REDefaultNovaTypeEditor
 
 @end

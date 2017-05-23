@@ -22,15 +22,23 @@
 // SOFTWARE.
 //
 
-#import "EVObject.h"
+#import "REBoomEditor.h"
+#import "RENovaTypeProperty.h"
+#import "REResourceBrowserWindow.h"
 
-@interface EVSpinObject : NSObject <EVObject>
+@implementation REBoomEditor
 
-@property (nonatomic, assign) int16_t spritesId;
-@property (nonatomic, assign) int16_t masksId;
-@property (nonatomic, assign) int16_t xSize;
-@property (nonatomic, assign) int16_t ySize;
-@property (nonatomic, assign) int16_t xTiles;
-@property (nonatomic, assign) int16_t yTiles;
++ (void)registerEditor
+{
+    [REResourceBrowserWindow registerEditorClass:self forType:@"bööm"];
+}
+
+- (NSArray<RENovaTypeProperty *> *)properties
+{
+    return @[[RENovaTypeProperty withDisplayName:@"Frame Advance" forProperty:@"frameAdvance" ofType:EVNovaTypeDataType_DWRD],
+             [RENovaTypeProperty withDisplayName:@"Sound Index" forProperty:@"soundIndex" ofType:EVNovaTypeDataType_DWRD],
+             [RENovaTypeProperty withDisplayName:@"Graphic Index" forProperty:@"graphicIndex" ofType:EVNovaTypeDataType_DWRD]
+             ];
+}
 
 @end

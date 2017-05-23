@@ -22,15 +22,24 @@
 // SOFTWARE.
 //
 
-#import "EVObject.h"
+#import "EVBoomObject.h"
 
-@interface EVSpinObject : NSObject <EVObject>
+@implementation EVBoomObject
 
-@property (nonatomic, assign) int16_t spritesId;
-@property (nonatomic, assign) int16_t masksId;
-@property (nonatomic, assign) int16_t xSize;
-@property (nonatomic, assign) int16_t ySize;
-@property (nonatomic, assign) int16_t xTiles;
-@property (nonatomic, assign) int16_t yTiles;
+- (nullable id)valueForProperty:(nonnull NSString *)property
+{
+    if ([property isEqualToString:@"frameAdvance"]) {
+        return @(self.frameAdvance);
+    }
+    else if ([property isEqualToString:@"soundIndex"]) {
+        return @(self.soundIndex);
+    }
+    else if ([property isEqualToString:@"graphicIndex"]) {
+        return @(self.graphicIndex);
+    }
+    else {
+        return nil;
+    }
+}
 
 @end

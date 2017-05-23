@@ -24,13 +24,10 @@
 
 #import "EVObject.h"
 
-@interface EVSpinObject : NSObject <EVObject>
+@interface EVBoomObject : NSObject <EVObject>
 
-@property (nonatomic, assign) int16_t spritesId;
-@property (nonatomic, assign) int16_t masksId;
-@property (nonatomic, assign) int16_t xSize;
-@property (nonatomic, assign) int16_t ySize;
-@property (nonatomic, assign) int16_t xTiles;
-@property (nonatomic, assign) int16_t yTiles;
+@property (nonatomic, assign) int16_t frameAdvance;
+@property (nonatomic, assign) int16_t soundIndex;
+@property (nonatomic, assign) int16_t graphicIndex;
 
 @end

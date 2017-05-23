@@ -22,15 +22,36 @@
 // SOFTWARE.
 //
 
-#import "EVObject.h"
+#import "RKNovaBoomResourceParser.h"
+#import "RKResource.h"
+#import "EVBoomObject.h"
 
-@interface EVSpinObject : NSObject <EVObject>
+@implementation RKNovaBoomResourceParser
 
-@property (nonatomic, assign) int16_t spritesId;
-@property (nonatomic, assign) int16_t masksId;
-@property (nonatomic, assign) int16_t xSize;
-@property (nonatomic, assign) int16_t ySize;
-@property (nonatomic, assign) int16_t xTiles;
-@property (nonatomic, assign) int16_t yTiles;
+#pragma mark - Auto-Loading
+
++ (void)register
+{
+    // Register the parser in the resource class. This will allow the resource
+    // to lookup an appropriate parser when required.
+    [RKResource registerParser:self forType:@"bööm"];
+}
+
+
+#pragma mark - Data Reading
+
+- (BOOL)parse
+{
+    EVBoomObject *boom = EVBoomObject.new;
+    
+    boom.frameAdvance = self.readDecimalWord;
+    boom.soundIndex = self.readDecimalWord;
+    boom.graphicIndex = self.readDecimalWord;
+    
+    self.object = boom;
+    
+    return YES;
+}
+
 
 @end
