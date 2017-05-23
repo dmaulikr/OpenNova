@@ -26,11 +26,12 @@
 
 @implementation RENovaTypeProperty
 
-+ (instancetype)withDisplayName:(NSString *)displayName forProperty:(NSString *)name
++ (instancetype)withDisplayName:(NSString *)displayName forProperty:(NSString *)name ofType:(EVNovaTypeDataType)type
 {
     RENovaTypeProperty *property = RENovaTypeProperty.new;
     property->_name = name.copy;
     property->_displayName = displayName.copy;
+    property->_type = type;
     return property;
 }
 

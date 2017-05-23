@@ -35,12 +35,12 @@
 
 - (NSArray<RENovaTypeProperty *> *)properties
 {
-    return @[[RENovaTypeProperty withDisplayName:@"Sprites ID" forProperty:@"spritesId"],
-             [RENovaTypeProperty withDisplayName:@"Masks ID" forProperty:@"masksId"],
-             [RENovaTypeProperty withDisplayName:@"X Size" forProperty:@"xSize"],
-             [RENovaTypeProperty withDisplayName:@"Y Size" forProperty:@"ySize"],
-             [RENovaTypeProperty withDisplayName:@"X Tiles" forProperty:@"xTiles"],
-             [RENovaTypeProperty withDisplayName:@"Y Tiles" forProperty:@"yTiles"],
+    return @[[RENovaTypeProperty withDisplayName:@"Sprites ID" forProperty:@"spritesId" ofType:EVNovaTypeDataType_Dwrd],
+             [RENovaTypeProperty withDisplayName:@"Masks ID" forProperty:@"masksId" ofType:EVNovaTypeDataType_Dwrd],
+             [RENovaTypeProperty withDisplayName:@"X Size" forProperty:@"xSize" ofType:EVNovaTypeDataType_Dwrd],
+             [RENovaTypeProperty withDisplayName:@"Y Size" forProperty:@"ySize" ofType:EVNovaTypeDataType_Dwrd],
+             [RENovaTypeProperty withDisplayName:@"X Tiles" forProperty:@"xTiles" ofType:EVNovaTypeDataType_Dwrd],
+             [RENovaTypeProperty withDisplayName:@"Y Tiles" forProperty:@"yTiles" ofType:EVNovaTypeDataType_Dwrd],
              ];
 }
 

@@ -26,4 +26,6 @@
 
 @protocol EVObject <NSObject>
 
+- (nullable id)valueForProperty:(nonnull NSString *)property;
+
 @end

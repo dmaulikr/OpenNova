@@ -26,4 +26,29 @@
 
 @implementation EVSpinObject
 
+- (nullable id)valueForProperty:(nonnull NSString *)property
+{
+    if ([property isEqualToString:@"spritesId"]) {
+        return @(self.spritesId);
+    }
+    else if ([property isEqualToString:@"masksId"]) {
+        return @(self.masksId);
+    }
+    else if ([property isEqualToString:@"xSize"]) {
+        return @(self.xSize);
+    }
+    else if ([property isEqualToString:@"ySize"]) {
+        return @(self.ySize);
+    }
+    else if ([property isEqualToString:@"xTiles"]) {
+        return @(self.xTiles);
+    }
+    else if ([property isEqualToString:@"yTiles"]) {
+        return @(self.yTiles);
+    }
+    else {
+        return nil;
+    }
+}
+
 @end

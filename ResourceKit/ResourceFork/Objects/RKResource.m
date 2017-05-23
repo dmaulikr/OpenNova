@@ -27,7 +27,10 @@
 #import <objc/runtime.h>
 #import "RKResourceParserProtocol.h"
 
-@implementation RKResource
+@implementation RKResource {
+@private
+    __strong id _object;
+}
 
 - (nonnull instancetype)initWithType:(nonnull NSString *)type
                                   id:(int16_t)resourceId
@@ -56,13 +59,16 @@
 
 - (id)object
 {
-    Class RKParser = [RKResource parserForType:self.type];
-    if (!RKParser) {
-        return self.data;
-    }
-    else {
-        return [RKParser parseData:self.data];
-    }
+    __weak __typeof(self) weakSelf = self;
+    return _object ?: (_object = ^id{
+        Class RKParser = [RKResource parserForType:weakSelf.type];
+        if (!RKParser) {
+            return weakSelf.data;
+        }
+        else {
+            return [RKParser parseData:weakSelf.data];
+        }
+    }());
 }
 
 

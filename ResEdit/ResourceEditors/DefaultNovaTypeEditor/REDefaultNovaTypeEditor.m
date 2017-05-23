@@ -62,21 +62,32 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
+    RENovaTypeProperty *property = self.properties[row];
+    
     if ([tableColumn.identifier isEqualToString:@"PropertyName"]) {
         NSTableCellView * cell = [tableView makeViewWithIdentifier:@"PropertyNameCell" owner:nil];
-        cell.textField.stringValue = self.properties[row].displayName;
+        cell.textField.stringValue = property.displayName;
+        return cell;
+    }
+    else if (property.type & EVNovaTypeDataType_NumberMask)  {
+        NSTableCellView * cell = [tableView makeViewWithIdentifier:@"PropertyBasicValueCell" owner:nil];
+        NSNumber *number = [self.resource.object valueForProperty:property.name];
+        cell.textField.stringValue = [NSString stringWithFormat:@"%@", number];
         return cell;
     }
     else {
-        NSTableCellView * cell = [tableView makeViewWithIdentifier:@"PropertyBasicValueCell" owner:nil];
-        cell.textField.stringValue = @"";
-        return cell;
+        return nil;
     }
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
     return 25.0;
+}
+
+- (void)renderNumericValue:(NSValue *)aValue inCell:(NSTableCellView *)cell
+{
+    
 }
 
 @end

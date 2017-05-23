@@ -24,11 +24,22 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, EVNovaTypeDataType) {
+    EVNovaTypeDataType_NumberMask = 1 << 10,
+    EVNovaTypeDataType_StringMask = 1 << 11,
+    EVNovaTypeDataType_ColorMask = 1 << 12,
+    
+    EVNovaTypeDataType_Byte = 0 | EVNovaTypeDataType_NumberMask,
+    EVNovaTypeDataType_Word = 1 | EVNovaTypeDataType_NumberMask,
+    EVNovaTypeDataType_Dwrd = 2 | EVNovaTypeDataType_NumberMask,
+};
+
 @interface RENovaTypeProperty : NSObject
 
 @property (nonatomic, strong, readonly) NSString *displayName;
 @property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, assign, readonly) EVNovaTypeDataType type;
 
-+ (instancetype)withDisplayName:(NSString *)displayName forProperty:(NSString *)name;
++ (instancetype)withDisplayName:(NSString *)displayName forProperty:(NSString *)name ofType:(EVNovaTypeDataType)type;
 
 @end

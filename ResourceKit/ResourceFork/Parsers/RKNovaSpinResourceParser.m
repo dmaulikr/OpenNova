@@ -44,12 +44,12 @@
 {
     EVSpinObject *spin = EVSpinObject.new;
     
-    spin.spritesId = self.readDwrd;
-    spin.masksId = self.readDwrd;
-    spin.xSize = self.readDwrd;
-    spin.ySize = self.readDwrd;
-    spin.xTiles = self.readDwrd;
-    spin.yTiles = self.readDwrd;
+    spin.spritesId = self.readWord;
+    spin.masksId = self.readWord;
+    spin.xSize = self.readWord;
+    spin.ySize = self.readWord;
+    spin.xTiles = self.readWord;
+    spin.yTiles = self.readWord;
     
     self.object = spin;
     

@@ -133,7 +133,7 @@
     uint8_t *raw = NULL;
     size_t size = 0;
     
-    NdatGetResourceDataOfTypeAndId(_file, type.UTF8String, id, &raw, &size);
+    NdatGetResourceDataOfTypeAndId(_file, [type cStringUsingEncoding:NSMacOSRomanStringEncoding], id, &raw, &size);
     
     return [NSData dataWithBytes:raw length:size];
 }
