@@ -28,10 +28,15 @@ typedef NS_ENUM(NSInteger, EVNovaTypeDataType) {
     EVNovaTypeDataType_NumberMask = 1 << 10,
     EVNovaTypeDataType_StringMask = 1 << 11,
     EVNovaTypeDataType_ColorMask = 1 << 12,
+    EVNovaTypeDataType_HexMask = 1 << 10,
     
-    EVNovaTypeDataType_Byte = 0 | EVNovaTypeDataType_NumberMask,
-    EVNovaTypeDataType_Word = 1 | EVNovaTypeDataType_NumberMask,
-    EVNovaTypeDataType_Dwrd = 2 | EVNovaTypeDataType_NumberMask,
+    EVNovaTypeDataType_DBYT = 0 | EVNovaTypeDataType_NumberMask,
+    EVNovaTypeDataType_DWRD = 1 | EVNovaTypeDataType_NumberMask,
+    EVNovaTypeDataType_DLNG = 2 | EVNovaTypeDataType_NumberMask,
+    
+    EVNovaTypeDataType_HBYT = 0 | EVNovaTypeDataType_HexMask,
+    EVNovaTypeDataType_HWRD = 1 | EVNovaTypeDataType_HexMask,
+    EVNovaTypeDataType_HLNG = 2 | EVNovaTypeDataType_HexMask,
 };
 
 @interface RENovaTypeProperty : NSObject

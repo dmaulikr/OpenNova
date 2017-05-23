@@ -31,7 +31,12 @@
 
 - (void)setup;
 
-- (int16_t)readWord;
-- (int32_t)readDwrd;
+- (int8_t)readDecimalByte;
+- (int16_t)readDecimalWord;
+- (int32_t)readDecimalLong;
+
+- (uint8_t)readHexByte;
+- (uint16_t)readHexWord;
+- (uint32_t)readHexLong;
 
 @end

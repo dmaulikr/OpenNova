@@ -85,9 +85,9 @@
     return 25.0;
 }
 
-- (void)renderNumericValue:(NSValue *)aValue inCell:(NSTableCellView *)cell
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
 {
-    
+    return NO;
 }
 
 @end

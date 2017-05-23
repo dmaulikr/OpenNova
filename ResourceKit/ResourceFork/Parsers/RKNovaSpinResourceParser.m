@@ -44,12 +44,12 @@
 {
     EVSpinObject *spin = EVSpinObject.new;
     
-    spin.spritesId = self.readWord;
-    spin.masksId = self.readWord;
-    spin.xSize = self.readWord;
-    spin.ySize = self.readWord;
-    spin.xTiles = self.readWord;
-    spin.yTiles = self.readWord;
+    spin.spritesId = self.readDecimalWord;
+    spin.masksId = self.readDecimalWord;
+    spin.xSize = self.readDecimalWord;
+    spin.ySize = self.readDecimalWord;
+    spin.xTiles = self.readDecimalWord;
+    spin.yTiles = self.readDecimalWord;
     
     self.object = spin;
     

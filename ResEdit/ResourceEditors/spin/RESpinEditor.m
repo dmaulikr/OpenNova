@@ -35,12 +35,12 @@
 
 - (NSArray<RENovaTypeProperty *> *)properties
 {
-    return @[[RENovaTypeProperty withDisplayName:@"Sprites ID" forProperty:@"spritesId" ofType:EVNovaTypeDataType_Dwrd],
-             [RENovaTypeProperty withDisplayName:@"Masks ID" forProperty:@"masksId" ofType:EVNovaTypeDataType_Dwrd],
-             [RENovaTypeProperty withDisplayName:@"X Size" forProperty:@"xSize" ofType:EVNovaTypeDataType_Dwrd],
-             [RENovaTypeProperty withDisplayName:@"Y Size" forProperty:@"ySize" ofType:EVNovaTypeDataType_Dwrd],
-             [RENovaTypeProperty withDisplayName:@"X Tiles" forProperty:@"xTiles" ofType:EVNovaTypeDataType_Dwrd],
-             [RENovaTypeProperty withDisplayName:@"Y Tiles" forProperty:@"yTiles" ofType:EVNovaTypeDataType_Dwrd],
+    return @[[RENovaTypeProperty withDisplayName:@"Sprites ID" forProperty:@"spritesId" ofType:EVNovaTypeDataType_DWRD],
+             [RENovaTypeProperty withDisplayName:@"Masks ID" forProperty:@"masksId" ofType:EVNovaTypeDataType_DWRD],
+             [RENovaTypeProperty withDisplayName:@"X Size" forProperty:@"xSize" ofType:EVNovaTypeDataType_DWRD],
+             [RENovaTypeProperty withDisplayName:@"Y Size" forProperty:@"ySize" ofType:EVNovaTypeDataType_DWRD],
+             [RENovaTypeProperty withDisplayName:@"X Tiles" forProperty:@"xTiles" ofType:EVNovaTypeDataType_DWRD],
+             [RENovaTypeProperty withDisplayName:@"Y Tiles" forProperty:@"yTiles" ofType:EVNovaTypeDataType_DWRD],
              ];
 }
 

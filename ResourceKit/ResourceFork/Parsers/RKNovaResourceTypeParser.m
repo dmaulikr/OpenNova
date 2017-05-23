@@ -73,12 +73,33 @@
 
 #pragma mark - Nova Types
 
-- (int16_t)readWord
+- (int8_t)readDecimalByte
+{
+    return _data.readByte;
+}
+
+- (int16_t)readDecimalWord
 {
     return _data.readWord;
 }
 
-- (int32_t)readDwrd
+- (int32_t)readDecimalLong
+{
+    return _data.readDWord;
+}
+
+
+- (uint8_t)readHexByte
+{
+    return _data.readByte;
+}
+
+- (uint16_t)readHexWord
+{
+    return _data.readWord;
+}
+
+- (uint32_t)readHexLong
 {
     return _data.readDWord;
 }
