@@ -251,7 +251,10 @@ typedef struct {
 {
     RKPictPixMap *px = calloc(1, sizeof(*px));
     px->baseAddress = _data.readDWord;
-    px->rowBytes = _data.readWord & 0x3FFF;
+    
+    uint16_t rowBytesRaw = _data.readWord;
+    px->rowBytes = rowBytesRaw & 0x7FFF;
+    
     px->bounds = RKPictRectFromMacRect(_data.readMacRect);
     
     px->pmVersion = _data.readWord;
@@ -307,17 +310,26 @@ typedef struct {
     uint16_t packedBytesCount = 0;
     
     for (uint32_t scanline = 0; scanline < sourceRect.height; ++scanline) {
-        packedBytesCount = px->rowBytes > 250 ? _data.readWord : _data.readByte;
         
-        // Read a single scanline from the data. This will need to be decoded.
-        NSData *encodedScanline = [_data readDataOfLength:packedBytesCount];
-        if (px->packType == 3) {
-            NSData *decodedScanline = [RKPackBitsDecoder decodeData:encodedScanline withValueSize:sizeof(uint16_t)];
-            [decodedScanline getBytes:raw length:sourceRect.width * 2];
+        // Narrow pictures don't use the pack bits compression. Not certain what the deciding factor
+        // for such a thing is, but low numbers of rowBytes seem to be the cause. Setting this to the
+        // highest value found that doesn't have compression.
+        if (px->rowBytes <= 4) { // No PackBits Compression
+            [[_data readDataOfLength:px->rowBytes] getBytes:raw length:sourceRect.width * 2];
         }
-        else {
-            NSData *decodedScanline = [RKPackBitsDecoder decodeData:encodedScanline withValueSize:1];
-            [decodedScanline getBytes:raw length:sourceRect.width * 2];
+        else { // Pack Bits Compression
+            packedBytesCount = px->rowBytes > 250 ? _data.readWord : _data.readByte;
+            
+            // Read a single scanline from the data. This will need to be decoded.
+            NSData *encodedScanline = [_data readDataOfLength:packedBytesCount];
+            if (px->packType == 3) {
+                NSData *decodedScanline = [RKPackBitsDecoder decodeData:encodedScanline withValueSize:sizeof(uint16_t)];
+                [decodedScanline getBytes:raw length:sourceRect.width * 2];
+            }
+            else {
+                NSData *decodedScanline = [RKPackBitsDecoder decodeData:encodedScanline withValueSize:1];
+                [decodedScanline getBytes:raw length:sourceRect.width * 2];
+            }
         }
         
         if (px->packType == 3) {
@@ -395,8 +407,6 @@ typedef struct {
     
     char *comment = calloc(length + 1, sizeof(*comment));
     [[_data readDataOfLength:length] getBytes:comment length:length];
-    
-    NSLog(@"Comment (%d): %s", kind, comment);
 }
 
 
