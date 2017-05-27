@@ -39,4 +39,11 @@
 - (uint16_t)readHexWord;
 - (uint32_t)readHexLong;
 
+- (CGColorRef)readColor;
+
+- (CGRect)readRect;
+- (CGPoint)readPoint;
+
+- (NSString *)readStringOfLength:(uint16_t)length;
+
 @end

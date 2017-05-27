@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,8 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <ResourceKit/ResourceKit.h>
 
-@interface REResourceBrowserWindow : NSWindowController
-
-+ (void)registerEditorClass:(nonnull Class)aEditorClass forType:(nonnull NSString *)resourceType;
-
-+ (void)openResourceFilesWithCompletion:(nonnull void(^)(REResourceBrowserWindow *_Nonnull window))handler;
+@interface RKNovaColrResourceParser : RKNovaResourceTypeParser
 
 @end

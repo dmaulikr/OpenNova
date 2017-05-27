@@ -57,6 +57,8 @@
                                 size:(size_t)size
                                owner:(nullable id <RKResourceFileProtocol>)owner;
 
+/// Remove the currently cached object data.
+- (void)flushCache;
 
 @end
 

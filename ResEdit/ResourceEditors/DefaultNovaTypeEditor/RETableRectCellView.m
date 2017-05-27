@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,24 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "RETableRectCellView.h"
 
-@interface REResourceBrowserWindow : NSWindowController
+@interface RETableRectCellView ()
+@property (strong) IBOutlet NSTextField *xField;
+@property (strong) IBOutlet NSTextField *yField;
+@property (strong) IBOutlet NSTextField *widthField;
+@property (strong) IBOutlet NSTextField *heightField;
+@end
 
-+ (void)registerEditorClass:(nonnull Class)aEditorClass forType:(nonnull NSString *)resourceType;
 
-+ (void)openResourceFilesWithCompletion:(nonnull void(^)(REResourceBrowserWindow *_Nonnull window))handler;
+@implementation RETableRectCellView
+
+- (void)setRect:(CGRect)rect
+{
+    self.xField.stringValue = [NSString stringWithFormat:@"%.0f", rect.origin.x];
+    self.yField.stringValue = [NSString stringWithFormat:@"%.0f", rect.origin.y];
+    self.widthField.stringValue = [NSString stringWithFormat:@"%.0f", rect.size.width];
+    self.heightField.stringValue = [NSString stringWithFormat:@"%.0f", rect.size.height];
+}
 
 @end

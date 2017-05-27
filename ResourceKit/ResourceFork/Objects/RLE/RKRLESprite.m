@@ -155,6 +155,7 @@
     
     self->_imageValue = CGBitmapContextCreateImage(ctx);
     
+    CGColorSpaceRelease(colorSpace);
     CGContextRelease(ctx);
 }
 

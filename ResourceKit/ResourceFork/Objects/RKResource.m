@@ -71,6 +71,11 @@
     }());
 }
 
+- (void)flushCache
+{
+    _object = nil;
+}
+
 
 #pragma mark - Equality
 
@@ -116,7 +121,8 @@ static const void * RKResourceParsersDictionaryKey = &RKResourceParsersDictionar
                     [classes[i] register];
                 }
             }
-
+            
+            free(classes);
         }
     });
 }

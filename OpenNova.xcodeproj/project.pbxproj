@@ -55,6 +55,14 @@
 		80EEE2141ED950D600EDD5E7 /* RKRLEObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 80EEE2121ED950D600EDD5E7 /* RKRLEObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80EEE2151ED950D600EDD5E7 /* RKRLEObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE2131ED950D600EDD5E7 /* RKRLEObject.m */; };
 		80EEE2161ED9568900EDD5E7 /* ClassicMacTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = BC75195D1E40DEA800960311 /* ClassicMacTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80EEE2191ED96EFC00EDD5E7 /* RKNovaColrResourceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 80EEE2171ED96EFC00EDD5E7 /* RKNovaColrResourceParser.h */; };
+		80EEE21A1ED96EFC00EDD5E7 /* RKNovaColrResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE2181ED96EFC00EDD5E7 /* RKNovaColrResourceParser.m */; };
+		80EEE21D1ED975AD00EDD5E7 /* EVColrObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 80EEE21B1ED975AD00EDD5E7 /* EVColrObject.h */; };
+		80EEE21E1ED975AD00EDD5E7 /* EVColrObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE21C1ED975AD00EDD5E7 /* EVColrObject.m */; };
+		80EEE2221ED9849D00EDD5E7 /* REColrEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE2211ED9849D00EDD5E7 /* REColrEditor.m */; };
+		80EEE2251ED987B400EDD5E7 /* RETableColorCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE2241ED987B400EDD5E7 /* RETableColorCellView.m */; };
+		80EEE2281ED98D2600EDD5E7 /* RETableRectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE2271ED98D2600EDD5E7 /* RETableRectCellView.m */; };
+		80EEE22B1ED98FFF00EDD5E7 /* RETablePointCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE22A1ED98FFF00EDD5E7 /* RETablePointCellView.m */; };
 		BC6D0D9E1E0A4FA400E4A162 /* ResourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */; };
 		BC6D0DA51E0A4FA400E4A162 /* ResourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */; };
@@ -163,6 +171,18 @@
 		80EEE2101ED9500900EDD5E7 /* RERLEEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RERLEEditor.xib; path = RLED/RERLEEditor.xib; sourceTree = "<group>"; };
 		80EEE2121ED950D600EDD5E7 /* RKRLEObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRLEObject.h; path = ResourceFork/Objects/RLE/RKRLEObject.h; sourceTree = "<group>"; };
 		80EEE2131ED950D600EDD5E7 /* RKRLEObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRLEObject.m; path = ResourceFork/Objects/RLE/RKRLEObject.m; sourceTree = "<group>"; };
+		80EEE2171ED96EFC00EDD5E7 /* RKNovaColrResourceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKNovaColrResourceParser.h; path = ResourceFork/Parsers/RKNovaColrResourceParser.h; sourceTree = "<group>"; };
+		80EEE2181ED96EFC00EDD5E7 /* RKNovaColrResourceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKNovaColrResourceParser.m; path = ResourceFork/Parsers/RKNovaColrResourceParser.m; sourceTree = "<group>"; };
+		80EEE21B1ED975AD00EDD5E7 /* EVColrObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVColrObject.h; path = ResourceFork/Objects/Nova/EVColrObject.h; sourceTree = "<group>"; };
+		80EEE21C1ED975AD00EDD5E7 /* EVColrObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVColrObject.m; path = ResourceFork/Objects/Nova/EVColrObject.m; sourceTree = "<group>"; };
+		80EEE2201ED9849D00EDD5E7 /* REColrEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REColrEditor.h; path = colr/REColrEditor.h; sourceTree = "<group>"; };
+		80EEE2211ED9849D00EDD5E7 /* REColrEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REColrEditor.m; path = colr/REColrEditor.m; sourceTree = "<group>"; };
+		80EEE2231ED987B400EDD5E7 /* RETableColorCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RETableColorCellView.h; path = DefaultNovaTypeEditor/RETableColorCellView.h; sourceTree = "<group>"; };
+		80EEE2241ED987B400EDD5E7 /* RETableColorCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RETableColorCellView.m; path = DefaultNovaTypeEditor/RETableColorCellView.m; sourceTree = "<group>"; };
+		80EEE2261ED98D2600EDD5E7 /* RETableRectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RETableRectCellView.h; path = DefaultNovaTypeEditor/RETableRectCellView.h; sourceTree = "<group>"; };
+		80EEE2271ED98D2600EDD5E7 /* RETableRectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RETableRectCellView.m; path = DefaultNovaTypeEditor/RETableRectCellView.m; sourceTree = "<group>"; };
+		80EEE2291ED98FFF00EDD5E7 /* RETablePointCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RETablePointCellView.h; path = DefaultNovaTypeEditor/RETablePointCellView.h; sourceTree = "<group>"; };
+		80EEE22A1ED98FFF00EDD5E7 /* RETablePointCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RETablePointCellView.m; path = DefaultNovaTypeEditor/RETablePointCellView.m; sourceTree = "<group>"; };
 		BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceKit.h; sourceTree = "<group>"; };
 		BC6D0D981E0A4FA400E4A162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -257,6 +277,8 @@
 				80BE96C81ED2A6BD00DCFC11 /* EVSpinObject.m */,
 				809919F61ED49056006D727B /* EVBoomObject.h */,
 				809919F71ED49056006D727B /* EVBoomObject.m */,
+				80EEE21B1ED975AD00EDD5E7 /* EVColrObject.h */,
+				80EEE21C1ED975AD00EDD5E7 /* EVColrObject.m */,
 			);
 			name = Nova;
 			sourceTree = "<group>";
@@ -277,6 +299,12 @@
 				80BE96D51ED2AB9A00DCFC11 /* REDefaultNovaTypeEditor.m */,
 				80BE96D71ED2AC1500DCFC11 /* RENovaTypeProperty.h */,
 				80BE96D81ED2AC1500DCFC11 /* RENovaTypeProperty.m */,
+				80EEE2231ED987B400EDD5E7 /* RETableColorCellView.h */,
+				80EEE2241ED987B400EDD5E7 /* RETableColorCellView.m */,
+				80EEE2261ED98D2600EDD5E7 /* RETableRectCellView.h */,
+				80EEE2271ED98D2600EDD5E7 /* RETableRectCellView.m */,
+				80EEE2291ED98FFF00EDD5E7 /* RETablePointCellView.h */,
+				80EEE22A1ED98FFF00EDD5E7 /* RETablePointCellView.m */,
 				80BE96DA1ED2AD5E00DCFC11 /* REDefaultNovaTypeEditor.xib */,
 			);
 			name = DefaultNovaTypeEditor;
@@ -317,6 +345,7 @@
 				80E295C91ED1F28800BCA35B /* STR# */,
 				80E295BF1ED18A0400BCA35B /* PICT */,
 				80EEE20C1ED94DD800EDD5E7 /* RLED */,
+				80EEE21F1ED97C6100EDD5E7 /* colr */,
 			);
 			path = ResourceEditors;
 			sourceTree = "<group>";
@@ -349,6 +378,15 @@
 				80EEE2101ED9500900EDD5E7 /* RERLEEditor.xib */,
 			);
 			name = RLED;
+			sourceTree = "<group>";
+		};
+		80EEE21F1ED97C6100EDD5E7 /* colr */ = {
+			isa = PBXGroup;
+			children = (
+				80EEE2201ED9849D00EDD5E7 /* REColrEditor.h */,
+				80EEE2211ED9849D00EDD5E7 /* REColrEditor.m */,
+			);
+			name = colr;
 			sourceTree = "<group>";
 		};
 		BC6D0D8A1E0A4FA300E4A162 = {
@@ -521,6 +559,8 @@
 				80BE96C31ED2A5DD00DCFC11 /* RKNovaSpinResourceParser.m */,
 				809919FA1ED490CC006D727B /* RKNovaBoomResourceParser.h */,
 				809919FB1ED490CC006D727B /* RKNovaBoomResourceParser.m */,
+				80EEE2171ED96EFC00EDD5E7 /* RKNovaColrResourceParser.h */,
+				80EEE2181ED96EFC00EDD5E7 /* RKNovaColrResourceParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -546,6 +586,7 @@
 				808FFEAB1ED8CC43009CE1A2 /* RKRLEResourceParser.h in Headers */,
 				808FFEA71ED8C9F7009CE1A2 /* RKRLESprite.h in Headers */,
 				80EEE2141ED950D600EDD5E7 /* RKRLEObject.h in Headers */,
+				80EEE21D1ED975AD00EDD5E7 /* EVColrObject.h in Headers */,
 				80BE96CC1ED2A76E00DCFC11 /* EVObject.h in Headers */,
 				BC7519551E3F81DA00960311 /* RKPictureResourceParser.h in Headers */,
 				BC7519521E3F7A8600960311 /* RKResourceParserProtocol.h in Headers */,
@@ -563,6 +604,7 @@
 				80E295C71ED1F10200BCA35B /* RKStringListResourceParser.h in Headers */,
 				809919F81ED49056006D727B /* EVBoomObject.h in Headers */,
 				809919FC1ED490CC006D727B /* RKNovaBoomResourceParser.h in Headers */,
+				80EEE2191ED96EFC00EDD5E7 /* RKNovaColrResourceParser.h in Headers */,
 				80181E361ED00FAD00814023 /* RKPackBitsDecoder.h in Headers */,
 				80D243B01E0AF6430040CF83 /* DataFile.h in Headers */,
 				80D243AE1E0AF63D0040CF83 /* Rez.h in Headers */,
@@ -717,6 +759,8 @@
 				80BE96C11ED2A41E00DCFC11 /* RKNovaResourceTypeParser.m in Sources */,
 				809919FD1ED490CC006D727B /* RKNovaBoomResourceParser.m in Sources */,
 				80D243C11E0BAF430040CF83 /* RKResourceFork.m in Sources */,
+				80EEE21A1ED96EFC00EDD5E7 /* RKNovaColrResourceParser.m in Sources */,
+				80EEE21E1ED975AD00EDD5E7 /* EVColrObject.m in Sources */,
 				80E295C81ED1F10200BCA35B /* RKStringListResourceParser.m in Sources */,
 				80EEE2151ED950D600EDD5E7 /* RKRLEObject.m in Sources */,
 				80E295A81ED0451400BCA35B /* Ndat.c in Sources */,
@@ -745,12 +789,16 @@
 				80BE96D01ED2A8D600DCFC11 /* RESpinEditor.m in Sources */,
 				BC6D0DB91E0A4FE600E4A162 /* main.m in Sources */,
 				80BE96D61ED2AB9A00DCFC11 /* REDefaultNovaTypeEditor.m in Sources */,
+				80EEE2281ED98D2600EDD5E7 /* RETableRectCellView.m in Sources */,
+				80EEE22B1ED98FFF00EDD5E7 /* RETablePointCellView.m in Sources */,
 				809919F51ED48FCE006D727B /* REBoomEditor.m in Sources */,
 				80EEE20F1ED94E0A00EDD5E7 /* RERLEEditor.m in Sources */,
+				80EEE2251ED987B400EDD5E7 /* RETableColorCellView.m in Sources */,
 				BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */,
 				80BE96D91ED2AC1500DCFC11 /* RENovaTypeProperty.m in Sources */,
 				80E295B61ED0B78F00BCA35B /* REResourceBrowserDataSource.m in Sources */,
 				80E295C31ED18A0400BCA35B /* REPICTEditor.m in Sources */,
+				80EEE2221ED9849D00EDD5E7 /* REColrEditor.m in Sources */,
 				80E295B21ED0B27E00BCA35B /* REResourceBrowserWindow.m in Sources */,
 				80E295CC1ED1F2B600BCA35B /* REStringListEditor.m in Sources */,
 			);

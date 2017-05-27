@@ -28,7 +28,9 @@ typedef NS_ENUM(NSInteger, EVNovaTypeDataType) {
     EVNovaTypeDataType_NumberMask = 1 << 10,
     EVNovaTypeDataType_StringMask = 1 << 11,
     EVNovaTypeDataType_ColorMask = 1 << 12,
-    EVNovaTypeDataType_HexMask = 1 << 10,
+    EVNovaTypeDataType_HexMask = 1 << 13,
+    EVNovaTypeDataType_RectMask = 1 << 14,
+    EVNovaTypeDataType_PointMask = 1 << 15,
     
     EVNovaTypeDataType_DBYT = 0 | EVNovaTypeDataType_NumberMask,
     EVNovaTypeDataType_DWRD = 1 | EVNovaTypeDataType_NumberMask,
@@ -37,6 +39,11 @@ typedef NS_ENUM(NSInteger, EVNovaTypeDataType) {
     EVNovaTypeDataType_HBYT = 0 | EVNovaTypeDataType_HexMask,
     EVNovaTypeDataType_HWRD = 1 | EVNovaTypeDataType_HexMask,
     EVNovaTypeDataType_HLNG = 2 | EVNovaTypeDataType_HexMask,
+    
+    EVNovaTypeDataType_Color = EVNovaTypeDataType_ColorMask,
+    EVNovaTypeDataType_Rect = EVNovaTypeDataType_RectMask,
+    EVNovaTypeDataType_Point = EVNovaTypeDataType_PointMask,
+    EVNovaTypeDataType_String = EVNovaTypeDataType_StringMask,
 };
 
 @interface RENovaTypeProperty : NSObject

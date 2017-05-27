@@ -394,6 +394,9 @@ typedef struct {
     _currentImage = [[NSImage alloc] initWithCGImage:image size:CGSizeMake(destinationRect.width, destinationRect.height)];
     
     // Clean up memory
+    CGImageRelease(image);
+    free(pxArray);
+    free(pxShortArray);
     free(rgbRaw);
     free(raw);
     free(px);
@@ -402,11 +405,10 @@ typedef struct {
 
 - (void)parseLongComment
 {
-    int16_t kind = _data.readWord;
+    int16_t kind __unused = _data.readWord;
     int16_t length = _data.readWord;
     
-    char *comment = calloc(length + 1, sizeof(*comment));
-    [[_data readDataOfLength:length] getBytes:comment length:length];
+    _data.position += length;
 }
 
 
@@ -423,6 +425,7 @@ typedef struct {
     
     CGImageRef image = CGBitmapContextCreateImage(ctx);
     CGContextRelease(ctx);
+    CGColorSpaceRelease(colorSpace);
     return image;
 }
 

@@ -143,7 +143,7 @@ typedef NS_ENUM(NSUInteger, RLEOpCode)
 
 - (BOOL)parseSpriteFrames
 {
-    NSUInteger position = _data.position;
+    NSUInteger position = 0;
     uint32_t rowStart = 0;
     int32_t currentLine = -1;
     int32_t currentOffset = 0;
@@ -203,7 +203,6 @@ typedef NS_ENUM(NSUInteger, RLEOpCode)
                 }
                 
                 if (count & 0x03) {
-                    position += 4 - (count & 0x03);
                     _data.position += 4 - (count & 0x03);
                 }
                 break;

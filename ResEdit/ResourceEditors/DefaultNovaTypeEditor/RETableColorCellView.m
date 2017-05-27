@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,17 @@
 // SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "RETableColorCellView.h"
 
-@interface REResourceBrowserWindow : NSWindowController
+@interface RETableColorCellView()
+@property (strong) IBOutlet NSColorWell *colorWell;
+@end
 
-+ (void)registerEditorClass:(nonnull Class)aEditorClass forType:(nonnull NSString *)resourceType;
+@implementation RETableColorCellView
 
-+ (void)openResourceFilesWithCompletion:(nonnull void(^)(REResourceBrowserWindow *_Nonnull window))handler;
+- (void)setColor:(CGColorRef)color
+{
+    self.colorWell.color = [NSColor colorWithCGColor:color];
+}
 
 @end

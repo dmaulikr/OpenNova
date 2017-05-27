@@ -25,6 +25,9 @@
 #import "REDefaultNovaTypeEditor.h"
 #import "RENovaTypeProperty.h"
 #import <ResourceKit/ResourceKit.h>
+#import "RETableColorCellView.h"
+#import "RETableRectCellView.h"
+#import "RETablePointCellView.h"
 
 @interface REDefaultNovaTypeEditor () <NSTableViewDataSource, NSTableViewDelegate>
 @property (strong) IBOutlet NSTableView *propertiesTableView;
@@ -69,10 +72,30 @@
         cell.textField.stringValue = property.displayName;
         return cell;
     }
+    else if (property.type & EVNovaTypeDataType_ColorMask)  {
+        RETableColorCellView * cell = [tableView makeViewWithIdentifier:@"PropertyColorValueCell" owner:nil];
+        [cell setColor:(__bridge CGColorRef)[self.resource.object valueForProperty:property.name]];
+        return cell;
+    }
     else if (property.type & EVNovaTypeDataType_NumberMask)  {
         NSTableCellView * cell = [tableView makeViewWithIdentifier:@"PropertyBasicValueCell" owner:nil];
         NSNumber *number = [self.resource.object valueForProperty:property.name];
         cell.textField.stringValue = [NSString stringWithFormat:@"%@", number];
+        return cell;
+    }
+    else if (property.type & EVNovaTypeDataType_StringMask)  {
+        NSTableCellView * cell = [tableView makeViewWithIdentifier:@"PropertyBasicValueCell" owner:nil];
+        cell.textField.stringValue = [self.resource.object valueForProperty:property.name];
+        return cell;
+    }
+    else if (property.type & EVNovaTypeDataType_RectMask)  {
+        RETableRectCellView * cell = [tableView makeViewWithIdentifier:@"PropertyRectValueCell" owner:nil];
+        [cell setRect:[(NSValue *)[self.resource.object valueForProperty:property.name] rectValue]];
+        return cell;
+    }
+    else if (property.type & EVNovaTypeDataType_PointMask)  {
+        RETablePointCellView * cell = [tableView makeViewWithIdentifier:@"PropertyPointValueCell" owner:nil];
+        [cell setPoint:[(NSValue *)[self.resource.object valueForProperty:property.name] pointValue]];
         return cell;
     }
     else {

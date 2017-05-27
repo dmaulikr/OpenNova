@@ -49,24 +49,38 @@ static void *REResourceEditorsKey = &REResourceEditorsKey;
 
 #pragma mark - File Access
 
-+ (void)openResourceFileWithCompletion:(nonnull void(^)(REResourceBrowserWindow *_Nonnull window))handler
++ (void)openResourceFilesWithCompletion:(nonnull void(^)(REResourceBrowserWindow *_Nonnull window))handler
 {
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
     
     openPanel.prompt = @"Open";
     openPanel.title = @"Open Resource File...";
     openPanel.allowsMultipleSelection = NO;
-    openPanel.canChooseDirectories = NO;
+    openPanel.canChooseDirectories = YES;
     
     if ([openPanel runModal] != NSModalResponseOK) {
         return;
     }
     
     NSString *filePath = openPanel.URL.relativePath;
+    BOOL isDir = NO;
     RKResourceFork *resourceFork = [RKResourceFork emptyResourceFork];
-    if ( [resourceFork addResourceFileAtPath:filePath] == nil ) {
-        return;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir] && isDir) {
+        // Opening all files in directory...
+        NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:filePath error:nil];
+        for (NSString *file in files) {
+            [resourceFork addResourceFileAtPath:[filePath stringByAppendingPathComponent:file]];
+        }
     }
+    else {
+        // Opening a single file.
+        if ( [resourceFork addResourceFileAtPath:filePath] == nil ) {
+            return;
+        }
+    }
+    
+    
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -152,6 +166,7 @@ static void *REResourceEditorsKey = &REResourceEditorsKey;
                 }
             }
             
+            free(classes);
         }
     });
 }
@@ -178,6 +193,8 @@ static void *REResourceEditorsKey = &REResourceEditorsKey;
         [self showContainerView:self.placeholderView];
         return;
     }
+    
+    [self.resourceEditor.resource flushCache];
     
     self.resourceIdLabel.hidden = NO;
     self.resourceNameLabel.hidden = NO;

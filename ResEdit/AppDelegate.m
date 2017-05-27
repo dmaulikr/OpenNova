@@ -34,7 +34,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     __weak __typeof(self) weakSelf = self;
-    [REResourceBrowserWindow openResourceFileWithCompletion:^(REResourceBrowserWindow *_Nonnull window) {
+    [REResourceBrowserWindow openResourceFilesWithCompletion:^(REResourceBrowserWindow *_Nonnull window) {
         __strong __typeof(self) strongSelf = weakSelf;
         strongSelf.resourceDocument = window;
     }];

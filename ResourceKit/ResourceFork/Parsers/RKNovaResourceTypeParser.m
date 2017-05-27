@@ -105,4 +105,33 @@
 }
 
 
+
+- (CGColorRef)readColor
+{
+    uint8_t alpha __unused = _data.readByte;
+    uint8_t red = _data.readByte;
+    uint8_t green = _data.readByte;
+    uint8_t blue = _data.readByte;
+    return CGColorCreateGenericRGB((1.0 / 255.0) * red, (1.0 / 255.0) * green, (1.0 / 255.0) * blue, 1.0);
+}
+
+- (CGRect)readRect
+{
+    int16_t y = _data.readWord;
+    int16_t x = _data.readWord;
+    int16_t y2 = _data.readWord;
+    int16_t x2 = _data.readWord;
+    return CGRectMake(x, y, x2 - x, y2 - y);
+}
+
+- (CGPoint)readPoint
+{
+    return CGPointMake(_data.readWord, _data.readWord);
+}
+
+- (NSString *)readStringOfLength:(uint16_t)length
+{
+    return [[NSString alloc] initWithData:[_data readDataOfLength:length] encoding:NSMacOSRomanStringEncoding];
+}
+
 @end
