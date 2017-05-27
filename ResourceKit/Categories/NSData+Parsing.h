@@ -39,6 +39,11 @@ typedef NS_ENUM(NSUInteger, RKDataEndianType)
 /// The current 'cursor' position inside the data
 @property (assign) NSUInteger position;
 
+/// Are there still bytes available in the receiver given the size of the data and
+/// the current position. This returns a count of the number of bytes that are
+/// still available
+@property (assign, readonly) NSInteger available;
+
 /// Reads a single byte from the current position in the data. This will increment
 /// of the position of the data accordingly.
 - (uint8_t)readByte;

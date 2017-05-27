@@ -26,4 +26,6 @@
 
 @interface REResourceHeaderView : NSView
 
+@property (atomic, assign) IBInspectable BOOL isFooterView;
+
 @end

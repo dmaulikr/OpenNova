@@ -77,6 +77,11 @@ static const void * RKDataEndianKey = &RKDataEndianKey;
     objc_setAssociatedObject(self, RKDataEndianKey, @(endianType), OBJC_ASSOCIATION_ASSIGN);
 }
 
+- (NSInteger)available
+{
+    return self.length - self.position;
+}
+
 
 #pragma mark - Data
 

@@ -35,3 +35,11 @@ FOUNDATION_EXPORT const unsigned char ResourceKitVersionString[];
 #import <ResourceKit/RKRezResourceFile.h>
 #import <ResourceKit/RKResourceFork.h>
 #import <ResourceKit/RKResource.h>
+
+#import <ResourceKit/RKRLESprite.h>
+#import <ResourceKit/RKRLEObject.h>
+#import <ResourceKit/EVObject.h>
+#import <ResourceKit/NSData+Parsing.h>
+#import <ResourceKit/RKNovaResourceTypeParser.h>
+#import <ResourceKit/RKResourceParserProtocol.h>
+#import <ResourceKit/ClassicMacTypes.h>

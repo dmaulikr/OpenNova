@@ -9,18 +9,22 @@
 /* Begin PBXBuildFile section */
 		80181E361ED00FAD00814023 /* RKPackBitsDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 80181E341ED00FAD00814023 /* RKPackBitsDecoder.h */; };
 		80181E371ED00FAD00814023 /* RKPackBitsDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 80181E351ED00FAD00814023 /* RKPackBitsDecoder.m */; };
+		808FFEA71ED8C9F7009CE1A2 /* RKRLESprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 808FFEA51ED8C9F7009CE1A2 /* RKRLESprite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		808FFEA81ED8C9F7009CE1A2 /* RKRLESprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 808FFEA61ED8C9F7009CE1A2 /* RKRLESprite.m */; };
+		808FFEAB1ED8CC43009CE1A2 /* RKRLEResourceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 808FFEA91ED8CC43009CE1A2 /* RKRLEResourceParser.h */; };
+		808FFEAC1ED8CC43009CE1A2 /* RKRLEResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 808FFEAA1ED8CC43009CE1A2 /* RKRLEResourceParser.m */; };
 		809919F51ED48FCE006D727B /* REBoomEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 809919F41ED48FCE006D727B /* REBoomEditor.m */; };
 		809919F81ED49056006D727B /* EVBoomObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 809919F61ED49056006D727B /* EVBoomObject.h */; };
 		809919F91ED49056006D727B /* EVBoomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 809919F71ED49056006D727B /* EVBoomObject.m */; };
 		809919FC1ED490CC006D727B /* RKNovaBoomResourceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 809919FA1ED490CC006D727B /* RKNovaBoomResourceParser.h */; };
 		809919FD1ED490CC006D727B /* RKNovaBoomResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 809919FB1ED490CC006D727B /* RKNovaBoomResourceParser.m */; };
-		80BE96C01ED2A41E00DCFC11 /* RKNovaResourceTypeParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BE96BE1ED2A41E00DCFC11 /* RKNovaResourceTypeParser.h */; };
+		80BE96C01ED2A41E00DCFC11 /* RKNovaResourceTypeParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BE96BE1ED2A41E00DCFC11 /* RKNovaResourceTypeParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80BE96C11ED2A41E00DCFC11 /* RKNovaResourceTypeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE96BF1ED2A41E00DCFC11 /* RKNovaResourceTypeParser.m */; };
 		80BE96C41ED2A5DD00DCFC11 /* RKNovaSpinResourceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BE96C21ED2A5DD00DCFC11 /* RKNovaSpinResourceParser.h */; };
 		80BE96C51ED2A5DD00DCFC11 /* RKNovaSpinResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE96C31ED2A5DD00DCFC11 /* RKNovaSpinResourceParser.m */; };
 		80BE96C91ED2A6BD00DCFC11 /* EVSpinObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BE96C71ED2A6BD00DCFC11 /* EVSpinObject.h */; };
 		80BE96CA1ED2A6BD00DCFC11 /* EVSpinObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE96C81ED2A6BD00DCFC11 /* EVSpinObject.m */; };
-		80BE96CC1ED2A76E00DCFC11 /* EVObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BE96CB1ED2A76E00DCFC11 /* EVObject.h */; };
+		80BE96CC1ED2A76E00DCFC11 /* EVObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BE96CB1ED2A76E00DCFC11 /* EVObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80BE96D01ED2A8D600DCFC11 /* RESpinEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE96CF1ED2A8D600DCFC11 /* RESpinEditor.m */; };
 		80BE96D61ED2AB9A00DCFC11 /* REDefaultNovaTypeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE96D51ED2AB9A00DCFC11 /* REDefaultNovaTypeEditor.m */; };
 		80BE96D91ED2AC1500DCFC11 /* RENovaTypeProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE96D81ED2AC1500DCFC11 /* RENovaTypeProperty.m */; };
@@ -46,6 +50,11 @@
 		80E295C81ED1F10200BCA35B /* RKStringListResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295C61ED1F10200BCA35B /* RKStringListResourceParser.m */; };
 		80E295CC1ED1F2B600BCA35B /* REStringListEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E295CB1ED1F2B600BCA35B /* REStringListEditor.m */; };
 		80E295CE1ED1F2CC00BCA35B /* REStringListEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E295CD1ED1F2CC00BCA35B /* REStringListEditor.xib */; };
+		80EEE20F1ED94E0A00EDD5E7 /* RERLEEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE20E1ED94E0A00EDD5E7 /* RERLEEditor.m */; };
+		80EEE2111ED9500900EDD5E7 /* RERLEEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80EEE2101ED9500900EDD5E7 /* RERLEEditor.xib */; };
+		80EEE2141ED950D600EDD5E7 /* RKRLEObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 80EEE2121ED950D600EDD5E7 /* RKRLEObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80EEE2151ED950D600EDD5E7 /* RKRLEObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EEE2131ED950D600EDD5E7 /* RKRLEObject.m */; };
+		80EEE2161ED9568900EDD5E7 /* ClassicMacTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = BC75195D1E40DEA800960311 /* ClassicMacTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC6D0D9E1E0A4FA400E4A162 /* ResourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */; };
 		BC6D0DA51E0A4FA400E4A162 /* ResourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DB51E0A4FE600E4A162 /* AppDelegate.m */; };
@@ -60,10 +69,10 @@
 		BC6D0DE71E0AA2AC00E4A162 /* RKRezResourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DE51E0AA2AC00E4A162 /* RKRezResourceFile.m */; };
 		BC6D0DE91E0ACCA000E4A162 /* RKRezResourceFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D0DE81E0ACCA000E4A162 /* RKRezResourceFileTests.m */; };
 		BC6D0DEE1E0ACF3F00E4A162 /* Test1.rez in Test Data (Rez) */ = {isa = PBXBuildFile; fileRef = BC6D0DEC1E0ACD8900E4A162 /* Test1.rez */; };
-		BC7519521E3F7A8600960311 /* RKResourceParserProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519511E3F7A8600960311 /* RKResourceParserProtocol.h */; };
+		BC7519521E3F7A8600960311 /* RKResourceParserProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519511E3F7A8600960311 /* RKResourceParserProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC7519551E3F81DA00960311 /* RKPictureResourceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519531E3F81DA00960311 /* RKPictureResourceParser.h */; };
 		BC7519561E3F81DA00960311 /* RKPictureResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7519541E3F81DA00960311 /* RKPictureResourceParser.m */; };
-		BC75195A1E3F87F900960311 /* NSData+Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519581E3F87F900960311 /* NSData+Parsing.h */; };
+		BC75195A1E3F87F900960311 /* NSData+Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7519581E3F87F900960311 /* NSData+Parsing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC75195B1E3F87F900960311 /* NSData+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7519591E3F87F900960311 /* NSData+Parsing.m */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +110,10 @@
 /* Begin PBXFileReference section */
 		80181E341ED00FAD00814023 /* RKPackBitsDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKPackBitsDecoder.h; path = ResourceFork/Helpers/RKPackBitsDecoder.h; sourceTree = "<group>"; };
 		80181E351ED00FAD00814023 /* RKPackBitsDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKPackBitsDecoder.m; path = ResourceFork/Helpers/RKPackBitsDecoder.m; sourceTree = "<group>"; };
+		808FFEA51ED8C9F7009CE1A2 /* RKRLESprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRLESprite.h; path = ResourceFork/Objects/RLE/RKRLESprite.h; sourceTree = "<group>"; };
+		808FFEA61ED8C9F7009CE1A2 /* RKRLESprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRLESprite.m; path = ResourceFork/Objects/RLE/RKRLESprite.m; sourceTree = "<group>"; };
+		808FFEA91ED8CC43009CE1A2 /* RKRLEResourceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRLEResourceParser.h; path = ResourceFork/Parsers/RKRLEResourceParser.h; sourceTree = "<group>"; };
+		808FFEAA1ED8CC43009CE1A2 /* RKRLEResourceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRLEResourceParser.m; path = ResourceFork/Parsers/RKRLEResourceParser.m; sourceTree = "<group>"; };
 		809919F31ED48FCE006D727B /* REBoomEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REBoomEditor.h; path = boom/REBoomEditor.h; sourceTree = "<group>"; };
 		809919F41ED48FCE006D727B /* REBoomEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REBoomEditor.m; path = boom/REBoomEditor.m; sourceTree = "<group>"; };
 		809919F61ED49056006D727B /* EVBoomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVBoomObject.h; path = ResourceFork/Objects/Nova/EVBoomObject.h; sourceTree = "<group>"; };
@@ -145,6 +158,11 @@
 		80E295CB1ED1F2B600BCA35B /* REStringListEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REStringListEditor.m; path = "STR#/REStringListEditor.m"; sourceTree = "<group>"; };
 		80E295CD1ED1F2CC00BCA35B /* REStringListEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = REStringListEditor.xib; path = "STR#/REStringListEditor.xib"; sourceTree = "<group>"; };
 		80E295CF1ED1F36A00BCA35B /* REResourceEditorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REResourceEditorProtocol.h; sourceTree = "<group>"; };
+		80EEE20D1ED94E0A00EDD5E7 /* RERLEEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RERLEEditor.h; path = RLED/RERLEEditor.h; sourceTree = "<group>"; };
+		80EEE20E1ED94E0A00EDD5E7 /* RERLEEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RERLEEditor.m; path = RLED/RERLEEditor.m; sourceTree = "<group>"; };
+		80EEE2101ED9500900EDD5E7 /* RERLEEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RERLEEditor.xib; path = RLED/RERLEEditor.xib; sourceTree = "<group>"; };
+		80EEE2121ED950D600EDD5E7 /* RKRLEObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRLEObject.h; path = ResourceFork/Objects/RLE/RKRLEObject.h; sourceTree = "<group>"; };
+		80EEE2131ED950D600EDD5E7 /* RKRLEObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRLEObject.m; path = ResourceFork/Objects/RLE/RKRLEObject.m; sourceTree = "<group>"; };
 		BC6D0D941E0A4FA300E4A162 /* ResourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6D0D971E0A4FA400E4A162 /* ResourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceKit.h; sourceTree = "<group>"; };
 		BC6D0D981E0A4FA400E4A162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,6 +229,17 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		808FFEA41ED8C94B009CE1A2 /* RLE */ = {
+			isa = PBXGroup;
+			children = (
+				808FFEA51ED8C9F7009CE1A2 /* RKRLESprite.h */,
+				808FFEA61ED8C9F7009CE1A2 /* RKRLESprite.m */,
+				80EEE2121ED950D600EDD5E7 /* RKRLEObject.h */,
+				80EEE2131ED950D600EDD5E7 /* RKRLEObject.m */,
+			);
+			name = RLE;
+			sourceTree = "<group>";
+		};
 		809919F21ED48FAB006D727B /* boom */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +287,7 @@
 			children = (
 				80D243C91E0C30BB0040CF83 /* RKResource.h */,
 				80D243CA1E0C30BB0040CF83 /* RKResource.m */,
+				808FFEA41ED8C94B009CE1A2 /* RLE */,
 				80BE96C61ED2A66300DCFC11 /* Nova */,
 			);
 			name = Objects;
@@ -286,6 +316,7 @@
 				80BE96CD1ED2A8A500DCFC11 /* spin */,
 				80E295C91ED1F28800BCA35B /* STR# */,
 				80E295BF1ED18A0400BCA35B /* PICT */,
+				80EEE20C1ED94DD800EDD5E7 /* RLED */,
 			);
 			path = ResourceEditors;
 			sourceTree = "<group>";
@@ -308,6 +339,16 @@
 				80E295CD1ED1F2CC00BCA35B /* REStringListEditor.xib */,
 			);
 			name = "STR#";
+			sourceTree = "<group>";
+		};
+		80EEE20C1ED94DD800EDD5E7 /* RLED */ = {
+			isa = PBXGroup;
+			children = (
+				80EEE20D1ED94E0A00EDD5E7 /* RERLEEditor.h */,
+				80EEE20E1ED94E0A00EDD5E7 /* RERLEEditor.m */,
+				80EEE2101ED9500900EDD5E7 /* RERLEEditor.xib */,
+			);
+			name = RLED;
 			sourceTree = "<group>";
 		};
 		BC6D0D8A1E0A4FA300E4A162 = {
@@ -470,6 +511,8 @@
 			children = (
 				BC7519531E3F81DA00960311 /* RKPictureResourceParser.h */,
 				BC7519541E3F81DA00960311 /* RKPictureResourceParser.m */,
+				808FFEA91ED8CC43009CE1A2 /* RKRLEResourceParser.h */,
+				808FFEAA1ED8CC43009CE1A2 /* RKRLEResourceParser.m */,
 				80E295C51ED1F10200BCA35B /* RKStringListResourceParser.h */,
 				80E295C61ED1F10200BCA35B /* RKStringListResourceParser.m */,
 				80BE96BE1ED2A41E00DCFC11 /* RKNovaResourceTypeParser.h */,
@@ -500,14 +543,19 @@
 			files = (
 				80E295AC1ED087E800BCA35B /* RKNdatResourceFile.h in Headers */,
 				80E295A91ED0451400BCA35B /* Ndat.h in Headers */,
+				808FFEAB1ED8CC43009CE1A2 /* RKRLEResourceParser.h in Headers */,
+				808FFEA71ED8C9F7009CE1A2 /* RKRLESprite.h in Headers */,
+				80EEE2141ED950D600EDD5E7 /* RKRLEObject.h in Headers */,
 				80BE96CC1ED2A76E00DCFC11 /* EVObject.h in Headers */,
-				BC7519521E3F7A8600960311 /* RKResourceParserProtocol.h in Headers */,
 				BC7519551E3F81DA00960311 /* RKPictureResourceParser.h in Headers */,
+				BC7519521E3F7A8600960311 /* RKResourceParserProtocol.h in Headers */,
 				BC6D0DA51E0A4FA400E4A162 /* ResourceKit.h in Headers */,
+				BC75195A1E3F87F900960311 /* NSData+Parsing.h in Headers */,
+				80BE96C01ED2A41E00DCFC11 /* RKNovaResourceTypeParser.h in Headers */,
+				80EEE2161ED9568900EDD5E7 /* ClassicMacTypes.h in Headers */,
 				80D243C01E0BAF430040CF83 /* RKResourceFork.h in Headers */,
 				BC6D0DE61E0AA2AC00E4A162 /* RKRezResourceFile.h in Headers */,
 				80D243CB1E0C30BB0040CF83 /* RKResource.h in Headers */,
-				80BE96C01ED2A41E00DCFC11 /* RKNovaResourceTypeParser.h in Headers */,
 				80BE96C41ED2A5DD00DCFC11 /* RKNovaSpinResourceParser.h in Headers */,
 				80BE96C91ED2A6BD00DCFC11 /* EVSpinObject.h in Headers */,
 				BC6D0DE21E0A9BEF00E4A162 /* RKResourceFileProtocol.h in Headers */,
@@ -515,7 +563,6 @@
 				80E295C71ED1F10200BCA35B /* RKStringListResourceParser.h in Headers */,
 				809919F81ED49056006D727B /* EVBoomObject.h in Headers */,
 				809919FC1ED490CC006D727B /* RKNovaBoomResourceParser.h in Headers */,
-				BC75195A1E3F87F900960311 /* NSData+Parsing.h in Headers */,
 				80181E361ED00FAD00814023 /* RKPackBitsDecoder.h in Headers */,
 				80D243B01E0AF6430040CF83 /* DataFile.h in Headers */,
 				80D243AE1E0AF63D0040CF83 /* Rez.h in Headers */,
@@ -643,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6D0DBB1E0A4FE600E4A162 /* Assets.xcassets in Resources */,
+				80EEE2111ED9500900EDD5E7 /* RERLEEditor.xib in Resources */,
 				BC6D0DBE1E0A4FE600E4A162 /* MainMenu.xib in Resources */,
 				80E295C41ED18A0400BCA35B /* REPICTEditor.xib in Resources */,
 				80E295CE1ED1F2CC00BCA35B /* REStringListEditor.xib in Resources */,
@@ -664,16 +712,19 @@
 				80E295AD1ED087E800BCA35B /* RKNdatResourceFile.m in Sources */,
 				BC75195B1E3F87F900960311 /* NSData+Parsing.m in Sources */,
 				80181E371ED00FAD00814023 /* RKPackBitsDecoder.m in Sources */,
+				808FFEA81ED8C9F7009CE1A2 /* RKRLESprite.m in Sources */,
 				BC6D0DC91E0A504800E4A162 /* Rez.c in Sources */,
 				80BE96C11ED2A41E00DCFC11 /* RKNovaResourceTypeParser.m in Sources */,
 				809919FD1ED490CC006D727B /* RKNovaBoomResourceParser.m in Sources */,
 				80D243C11E0BAF430040CF83 /* RKResourceFork.m in Sources */,
 				80E295C81ED1F10200BCA35B /* RKStringListResourceParser.m in Sources */,
+				80EEE2151ED950D600EDD5E7 /* RKRLEObject.m in Sources */,
 				80E295A81ED0451400BCA35B /* Ndat.c in Sources */,
 				80D243CC1E0C30BB0040CF83 /* RKResource.m in Sources */,
 				BC7519561E3F81DA00960311 /* RKPictureResourceParser.m in Sources */,
 				BC6D0DCE1E0A50DB00E4A162 /* DataFile.c in Sources */,
 				80BE96CA1ED2A6BD00DCFC11 /* EVSpinObject.m in Sources */,
+				808FFEAC1ED8CC43009CE1A2 /* RKRLEResourceParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +746,7 @@
 				BC6D0DB91E0A4FE600E4A162 /* main.m in Sources */,
 				80BE96D61ED2AB9A00DCFC11 /* REDefaultNovaTypeEditor.m in Sources */,
 				809919F51ED48FCE006D727B /* REBoomEditor.m in Sources */,
+				80EEE20F1ED94E0A00EDD5E7 /* RERLEEditor.m in Sources */,
 				BC6D0DB61E0A4FE600E4A162 /* AppDelegate.m in Sources */,
 				80BE96D91ED2AC1500DCFC11 /* RENovaTypeProperty.m in Sources */,
 				80E295B61ED0B78F00BCA35B /* REResourceBrowserDataSource.m in Sources */,

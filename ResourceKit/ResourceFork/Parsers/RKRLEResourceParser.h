@@ -1,7 +1,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2016 Tom Hancocks
+// Copyright (c) 2017 Tom Hancocks
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,25 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
- 
-#import "REResourceHeaderView.h"
 
-@implementation REResourceHeaderView
+#import "RKResourceParserProtocol.h"
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    [[NSColor gridColor] setFill];
-    [NSBezierPath fillRect:self.bounds];
-    
-    [[NSColor colorWithWhite:0.985 alpha:1.0] setFill];
-    if (self.isFooterView) {
-        [NSBezierPath fillRect:NSMakeRect(0, 0, self.bounds.size.width, self.bounds.size.height - 1)];
-    }
-    else {
-        [NSBezierPath fillRect:NSMakeRect(0, 1, self.bounds.size.width, self.bounds.size.height)];
-    }
-    
-    [super drawRect:dirtyRect];
-}
+@interface RKRLEResourceParser : NSObject <RKResourceParserProtocol>
 
 @end
